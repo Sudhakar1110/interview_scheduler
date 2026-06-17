@@ -321,12 +321,14 @@ def _make_workspace(title, module, icon, indicator_color, sequence_id,
                 current_card_links = []
             elif lnk["type"] == "Link" and current_card_links is not None:
                 link_type = lnk.get("link_type", "DocType")
-                if link_type == "DocType":
-                    current_card_links.append({
-                        "type": "doctype",
-                        "name": lnk["link_to"],
-                        "label": lnk["label"]
-                    })
+                # Map Frappe link types to content link types
+                link_type_map = {"DocType": "doctype", "Report": "report", "Page": "page"}
+                content_link_type = link_type_map.get(link_type, "doctype")
+                current_card_links.append({
+                    "type": content_link_type,
+                    "name": lnk["link_to"],
+                    "label": lnk["label"]
+                })
         if current_card_links:
             content_items.append({
                 "id": frappe.generate_hash(length=10),
@@ -661,6 +663,15 @@ def sync_module_workspaces():
             {"type": "Link", "label": "Message Center", "link_type": "DocType", "link_to": "Message Center"},
             {"type": "Link", "label": "Notification Log", "link_type": "DocType", "link_to": "Notification Log"},
             {"type": "Card Break", "label": "Reports & Analytics", "icon": "folder"},
+            {"type": "Link", "label": "Job Posting Analysis", "link_type": "Report", "link_to": "Job Posting Analysis"},
+            {"type": "Link", "label": "Open Positions", "link_type": "Report", "link_to": "Open Positions"},
+            {"type": "Link", "label": "Candidate Database", "link_type": "Report", "link_to": "Candidate Database"},
+            {"type": "Link", "label": "Application Tracking", "link_type": "Report", "link_to": "Application Tracking"},
+            {"type": "Link", "label": "Interview Schedule", "link_type": "Report", "link_to": "Interview Schedule Report"},
+            {"type": "Link", "label": "Offer Letter Report", "link_type": "Report", "link_to": "Offer Letter Report"},
+            {"type": "Link", "label": "Onboarding Status", "link_type": "Report", "link_to": "Onboarding Status"},
+            {"type": "Link", "label": "Subscription Overview", "link_type": "Report", "link_to": "Subscription Overview"},
+            {"type": "Link", "label": "Notification Log Report", "link_type": "Report", "link_to": "Notification Log Report"},
             {"type": "Card Break", "label": "Configuration", "icon": "setting"},
             {"type": "Link", "label": "Company Settings", "link_type": "DocType", "link_to": "Company Profile"},
         ])
@@ -677,7 +688,9 @@ def sync_module_workspaces():
             {"type": "Link", "label": "Job Types", "link_type": "DocType", "link_to": "Job Type"},
             {"type": "Link", "label": "Job Locations", "link_type": "DocType", "link_to": "Job Location"},
             {"type": "Link", "label": "Job Skills", "link_type": "DocType", "link_to": "Job Skill"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Job Posting Analysis", "link_type": "Report", "link_to": "Job Posting Analysis"},
+            {"type": "Link", "label": "Open Positions", "link_type": "Report", "link_to": "Open Positions"}])
     _make_workspace(title="Employer Management", module="HireFlow", icon="building", indicator_color="green", sequence_id=3, parent_page="Hireflow",
         shortcuts=[{"label": "New Company", "type": "DocType", "link_to": "Company Profile", "onboard": 1},
             {"label": "New Recruiter", "type": "DocType", "link_to": "Recruiter Profile", "onboard": 1}],
@@ -686,7 +699,8 @@ def sync_module_workspaces():
             {"type": "Link", "label": "Recruiter Profiles", "link_type": "DocType", "link_to": "Recruiter Profile"},
             {"type": "Card Break", "label": "Subscriptions", "icon": "credit-card"},
             {"type": "Link", "label": "Employer Subscriptions", "link_type": "DocType", "link_to": "Employer Subscription"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Candidate Database", "link_type": "Report", "link_to": "Candidate Database"}])
     _make_workspace(title="Candidate Management", module="HireFlow", icon="people", indicator_color="purple", sequence_id=4, parent_page="Hireflow",
         shortcuts=[{"label": "New Candidate", "type": "DocType", "link_to": "Candidate Profile", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Candidates", "icon": "people"},
@@ -698,7 +712,8 @@ def sync_module_workspaces():
         links=[{"type": "Card Break", "label": "Applications", "icon": "file-text"},
             {"type": "Link", "label": "Job Applications", "link_type": "DocType", "link_to": "Job Application"},
             {"type": "Link", "label": "Interview Feedback", "link_type": "DocType", "link_to": "Interview Feedback"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Application Tracking", "link_type": "Report", "link_to": "Application Tracking"}])
     _make_workspace(title="Interview Management", module="HireFlow", icon="people", indicator_color="cyan", sequence_id=6, parent_page="Hireflow",
         shortcuts=[{"label": "Schedule Interview", "type": "DocType", "link_to": "Interview Schedule", "onboard": 1},
             {"label": "New Feedback", "type": "DocType", "link_to": "Interview Feedback", "onboard": 0}],
@@ -706,7 +721,8 @@ def sync_module_workspaces():
             {"type": "Link", "label": "Interview Schedules", "link_type": "DocType", "link_to": "Interview Schedule"},
             {"type": "Card Break", "label": "Feedback", "icon": "comment"},
             {"type": "Link", "label": "Interview Feedback", "link_type": "DocType", "link_to": "Interview Feedback"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Interview Schedule", "link_type": "Report", "link_to": "Interview Schedule Report"}])
     _make_workspace(title="Panel Management", module="HireFlow", icon="group", indicator_color="darkgrey", sequence_id=7, parent_page="Hireflow",
         shortcuts=[{"label": "New Panel Member", "type": "DocType", "link_to": "Panel Member", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Panel Members", "icon": "people"},
@@ -716,12 +732,14 @@ def sync_module_workspaces():
         shortcuts=[{"label": "New Offer Letter", "type": "DocType", "link_to": "Offer Letter", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Offers", "icon": "mail"},
             {"type": "Link", "label": "Offer Letters", "link_type": "DocType", "link_to": "Offer Letter"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Offer Letter Report", "link_type": "Report", "link_to": "Offer Letter Report"}])
     _make_workspace(title="Hiring Management", module="HireFlow", icon="user", indicator_color="red", sequence_id=9, parent_page="Hireflow",
         shortcuts=[{"label": "New Onboarding", "type": "DocType", "link_to": "Employee Onboarding", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Onboarding", "icon": "user"},
             {"type": "Link", "label": "Employee Onboardings", "link_type": "DocType", "link_to": "Employee Onboarding"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Onboarding Status", "link_type": "Report", "link_to": "Onboarding Status"}])
     _make_workspace(title="Subscription Management", module="HireFlow", icon="credit-card", indicator_color="yellow", sequence_id=10, parent_page="Hireflow",
         shortcuts=[{"label": "New Plan", "type": "DocType", "link_to": "Subscription Plan", "onboard": 1},
             {"label": "New Subscription", "type": "DocType", "link_to": "Employer Subscription", "onboard": 0}],
@@ -731,7 +749,8 @@ def sync_module_workspaces():
             {"type": "Link", "label": "Employer Subscriptions", "link_type": "DocType", "link_to": "Employer Subscription"},
             {"type": "Card Break", "label": "Payments", "icon": "dollar"},
             {"type": "Link", "label": "Payment Transactions", "link_type": "DocType", "link_to": "Payment Transaction"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Subscription Overview", "link_type": "Report", "link_to": "Subscription Overview"}])
     _make_workspace(title="Communication Management", module="HireFlow", icon="message-square", indicator_color="blue", sequence_id=11, parent_page="Hireflow",
         shortcuts=[{"label": "New Template", "type": "DocType", "link_to": "Email Template", "onboard": 1},
             {"label": "New Message", "type": "DocType", "link_to": "Message Center", "onboard": 0}],
@@ -740,7 +759,8 @@ def sync_module_workspaces():
             {"type": "Card Break", "label": "Messages", "icon": "message-circle"},
             {"type": "Link", "label": "Message Center", "link_type": "DocType", "link_to": "Message Center"},
             {"type": "Link", "label": "Notification Log", "link_type": "DocType", "link_to": "Notification Log"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Notification Log Report", "link_type": "Report", "link_to": "Notification Log Report"}])
     frappe.db.commit()
     print("=" * 50)
     print("HireFlow Workspace Verification")

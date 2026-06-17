@@ -1,0 +1,83 @@
+[
+ {
+  "doctype": "Report",
+  "name": "Job Posting Analysis",
+  "report_name": "Job Posting Analysis",
+  "ref_doctype": "Job Posting",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Open Positions",
+  "report_name": "Open Positions",
+  "ref_doctype": "Job Posting",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Candidate Database",
+  "report_name": "Candidate Database",
+  "ref_doctype": "Candidate Profile",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Application Tracking",
+  "report_name": "Application Tracking",
+  "ref_doctype": "Job Application",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Interview Schedule Report",
+  "report_name": "Interview Schedule Report",
+  "ref_doctype": "Interview Schedule",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Offer Letter Report",
+  "report_name": "Offer Letter Report",
+  "ref_doctype": "Offer Letter",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Onboarding Status",
+  "report_name": "Onboarding Status",
+  "ref_doctype": "Employee Onboarding",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Subscription Overview",
+  "report_name": "Subscription Overview",
+  "ref_doctype": "Employer Subscription",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Notification Log Report",
+  "report_name": "Notification Log Report",
+  "ref_doctype": "Notification Log",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
+ }
+]

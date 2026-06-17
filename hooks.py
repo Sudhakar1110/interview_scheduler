@@ -132,7 +132,7 @@ fixtures = [
             [
                 "module",
                 "=",
-                "HireFlow"
+                "Hireflow"
             ]
         ]
     },
@@ -142,7 +142,7 @@ fixtures = [
             [
                 "module",
                 "=",
-                "HireFlow"
+                "Hireflow"
             ]
         ]
     },

@@ -574,7 +574,7 @@ def sync_module_workspaces():
         {"type": "quick_list", "data": {"doctype": "Interview Schedule", "label": "Interview Schedules"}},
         {"type": "quick_list", "data": {"doctype": "Offer Letter", "label": "Offer Letters"}},
     ]
-    _make_workspace(title="HireFlow", module="HireFlow", icon="briefcase", indicator_color="green", sequence_id=1,
+    _make_workspace(title="Hireflow", module="Hireflow", icon="briefcase", indicator_color="green", sequence_id=1,
         extra_content_items=hireflow_extra_content,
         shortcuts=[
             {"label": "New Job Posting", "type": "DocType", "link_to": "Job Posting", "onboard": 1},
@@ -700,7 +700,7 @@ def sync_module_workspaces():
     print("HireFlow Workspace Verification")
     print("=" * 50)
     workspace_titles = [
-        "HireFlow", "Job Management", "Employer Management", "Candidate Management",
+        "Hireflow", "Job Management", "Employer Management", "Candidate Management",
         "ATS Management", "Interview Management", "Panel Management", "Offer Management",
         "Hiring Management", "Subscription Management", "Communication Management"
     ]
@@ -739,6 +739,9 @@ def sync_module_workspaces():
 def after_migrate():
     frappe.clear_cache()
     sync_module_workspaces()
-    create_demo_data()
+    # NOTE: create_demo_data() is intentionally NOT called here.
+    # Demo data insertion on every migrate causes LinkValidationError
+    # when referenced doctypes are not yet fully synced in the DB.
+    # Demo data is only created on fresh install (after_install) in developer mode.
     print("Clear browser cache and refresh Desk to see changes.")
     frappe.db.commit()

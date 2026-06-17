@@ -1,0 +1,54 @@
+[
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Draft"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Applied"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Screening"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Interview"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Offer"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Hired"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Rejected"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Pending Approval"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Approved"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Sent"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Accepted"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Declined"
+ },
+ {
+  "doctype": "Workflow State",
+  "workflow_state_name": "Expired"
+ }
+]

@@ -115,6 +115,9 @@ fixtures = [
         "doctype": "Workflow"
     },
     {
+        "doctype": "Workflow State"
+    },
+    {
         "doctype": "Notification"
     },
     {

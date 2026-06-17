@@ -594,10 +594,30 @@ def create_dashboard_charts():
     print("  All 5 Dashboard Charts synced.")
 
 
+def create_workflow_states():
+    """Create standalone Workflow State records required by Link workflow_state field"""
+    states = [
+        "Draft", "Applied", "Screening", "Interview", "Offer", "Hired", "Rejected",
+        "Pending Approval", "Approved", "Sent", "Accepted", "Declined", "Expired"
+    ]
+    for state_name in states:
+        if not frappe.db.exists("Workflow State", state_name):
+            try:
+                frappe.get_doc({
+                    "doctype": "Workflow State",
+                    "workflow_state_name": state_name
+                }).insert(ignore_permissions=True)
+                print("  Created Workflow State: {0}".format(state_name))
+            except Exception as e:
+                print("  Skipped Workflow State {0}: {1}".format(state_name, str(e)))
+
+
 def sync_module_workspaces():
     print("=" * 50)
     print("Syncing HireFlow Module Workspaces...")
     _cleanup_stale_workspace_refs()
+    # Create Workflow State records required by workflow_state Link fields
+    create_workflow_states()
     # Create Number Card and Dashboard Chart records
     create_number_cards()
     create_dashboard_charts()

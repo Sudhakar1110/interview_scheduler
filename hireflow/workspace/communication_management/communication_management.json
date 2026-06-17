@@ -1,0 +1,98 @@
+{
+ "app": "hireflow",
+ "category": "Modules",
+ "charts": [],
+ "content": "[{\"type\": \"card\", \"label\": \"Templates\", \"links\": [{\"type\": \"doctype\", \"name\": \"Email Template\", \"label\": \"Email Templates\"}]}, {\"type\": \"card\", \"label\": \"Messages\", \"links\": [{\"type\": \"doctype\", \"name\": \"Message Center\", \"label\": \"Message Center\"}, {\"type\": \"doctype\", \"name\": \"Notification Log\", \"label\": \"Notification Log\"}]}]",
+ "creation": "2024-01-01 00:00:00.000000",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "message-square",
+ "idx": 0,
+ "is_hidden": 0,
+ "is_standard": 1,
+ "label": "Communication Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Templates",
+   "link_count": 0,
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Email Templates",
+   "link_count": 0,
+   "link_to": "Email Template",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Messages",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Message Center",
+   "link_count": 0,
+   "link_to": "Message Center",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Notification Log",
+   "link_count": 0,
+   "link_to": "Notification Log",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HireFlow",
+ "name": "Communication Management",
+ "owner": "Administrator",
+ "parent_page": "Hireflow",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 11.0,
+ "shortcuts": [
+  {
+   "label": "New Template",
+   "link_to": "Email Template",
+   "onboard": 1,
+   "type": "DocType"
+  },
+  {
+   "label": "New Message",
+   "link_to": "Message Center",
+   "onboard": 0,
+   "type": "DocType"
+  }
+ ],
+ "title": "Communication Management"
+}

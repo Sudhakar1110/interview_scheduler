@@ -1,0 +1,64 @@
+{
+ "app": "hireflow",
+ "category": "Modules",
+ "charts": [],
+ "content": "[{\"type\": \"card\", \"label\": \"Panel Members\", \"links\": [{\"type\": \"doctype\", \"name\": \"Panel Member\", \"label\": \"All Panel Members\"}]}]",
+ "creation": "2024-01-01 00:00:00.000000",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "group",
+ "idx": 0,
+ "is_hidden": 0,
+ "is_standard": 1,
+ "label": "Panel Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Panel Members",
+   "link_count": 0,
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "All Panel Members",
+   "link_count": 0,
+   "link_to": "Panel Member",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HireFlow",
+ "name": "Panel Management",
+ "owner": "Administrator",
+ "parent_page": "Hireflow",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 7.0,
+ "shortcuts": [
+  {
+   "label": "New Panel Member",
+   "link_to": "Panel Member",
+   "onboard": 1,
+   "type": "DocType"
+  }
+ ],
+ "title": "Panel Management"
+}

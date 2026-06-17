@@ -1,1 +1,62 @@
-[]
+[
+ {
+  "doctype": "Number Card",
+  "name": "Open Jobs",
+  "label": "Open Jobs",
+  "document_type": "Job Posting",
+  "function": "Count",
+  "filters_json": "[[\"status\", \"=\", \"Open\"]]",
+  "type": "Document Type",
+  "color": "#2490ef",
+  "is_public": 1,
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Number Card",
+  "name": "Active Candidates",
+  "label": "Active Candidates",
+  "document_type": "Candidate Profile",
+  "function": "Count",
+  "filters_json": "[[\"is_active\", \"=\", 1]]",
+  "type": "Document Type",
+  "color": "#39b446",
+  "is_public": 1,
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Number Card",
+  "name": "Scheduled Interviews",
+  "label": "Scheduled Interviews",
+  "document_type": "Interview Schedule",
+  "function": "Count",
+  "filters_json": "[[\"status\", \"=\", \"Scheduled\"]]",
+  "type": "Document Type",
+  "color": "#e0732e",
+  "is_public": 1,
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Number Card",
+  "name": "Offers Released",
+  "label": "Offers Released",
+  "document_type": "Offer Letter",
+  "function": "Count",
+  "filters_json": "[[\"status\", \"in\", [\"Sent\", \"Accepted\"]]]",
+  "type": "Document Type",
+  "color": "#b7443f",
+  "is_public": 1,
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Number Card",
+  "name": "Hires Completed",
+  "label": "Hires Completed",
+  "document_type": "Employee Onboarding",
+  "function": "Count",
+  "filters_json": "[[\"status\", \"=\", \"Completed\"]]",
+  "type": "Document Type",
+  "color": "#8b5cf6",
+  "is_public": 1,
+  "module": "HireFlow"
+ }
+]

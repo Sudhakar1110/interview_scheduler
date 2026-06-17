@@ -1,0 +1,98 @@
+{
+ "app": "hireflow",
+ "category": "Modules",
+ "charts": [],
+ "content": "[{\"type\": \"card\", \"label\": \"Employers\", \"links\": [{\"type\": \"doctype\", \"name\": \"Company Profile\", \"label\": \"Company Profiles\"}, {\"type\": \"doctype\", \"name\": \"Recruiter Profile\", \"label\": \"Recruiter Profiles\"}]}, {\"type\": \"card\", \"label\": \"Subscriptions\", \"links\": [{\"type\": \"doctype\", \"name\": \"Employer Subscription\", \"label\": \"Employer Subscriptions\"}]}]",
+ "creation": "2024-01-01 00:00:00.000000",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "building",
+ "idx": 0,
+ "is_hidden": 0,
+ "is_standard": 1,
+ "label": "Employer Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employers",
+   "link_count": 0,
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Company Profiles",
+   "link_count": 0,
+   "link_to": "Company Profile",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Recruiter Profiles",
+   "link_count": 0,
+   "link_to": "Recruiter Profile",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subscriptions",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employer Subscriptions",
+   "link_count": 0,
+   "link_to": "Employer Subscription",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HireFlow",
+ "name": "Employer Management",
+ "owner": "Administrator",
+ "parent_page": "Hireflow",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 3.0,
+ "shortcuts": [
+  {
+   "label": "New Company",
+   "link_to": "Company Profile",
+   "onboard": 1,
+   "type": "DocType"
+  },
+  {
+   "label": "New Recruiter",
+   "link_to": "Recruiter Profile",
+   "onboard": 1,
+   "type": "DocType"
+  }
+ ],
+ "title": "Employer Management"
+}

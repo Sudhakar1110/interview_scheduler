@@ -1,0 +1,88 @@
+{
+ "app": "hireflow",
+ "category": "Modules",
+ "charts": [],
+ "content": "[{\"type\": \"card\", \"label\": \"Schedules\", \"links\": [{\"type\": \"doctype\", \"name\": \"Interview Schedule\", \"label\": \"Interview Schedules\"}]}, {\"type\": \"card\", \"label\": \"Feedback\", \"links\": [{\"type\": \"doctype\", \"name\": \"Interview Feedback\", \"label\": \"Interview Feedback\"}]}]",
+ "creation": "2024-01-01 00:00:00.000000",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "calendar",
+ "idx": 0,
+ "is_hidden": 0,
+ "is_standard": 1,
+ "label": "Interview Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Schedules",
+   "link_count": 0,
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Interview Schedules",
+   "link_count": 0,
+   "link_to": "Interview Schedule",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Feedback",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Interview Feedback",
+   "link_count": 0,
+   "link_to": "Interview Feedback",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HireFlow",
+ "name": "Interview Management",
+ "owner": "Administrator",
+ "parent_page": "Hireflow",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 6.0,
+ "shortcuts": [
+  {
+   "label": "Schedule Interview",
+   "link_to": "Interview Schedule",
+   "onboard": 1,
+   "type": "DocType"
+  },
+  {
+   "label": "New Feedback",
+   "link_to": "Interview Feedback",
+   "onboard": 0,
+   "type": "DocType"
+  }
+ ],
+ "title": "Interview Management"
+}

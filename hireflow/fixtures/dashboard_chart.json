@@ -1,1 +1,68 @@
-[]
+[
+ {
+  "doctype": "Dashboard Chart",
+  "name": "Applications by Status",
+  "chart_name": "Applications by Status",
+  "chart_type": "Group By",
+  "document_type": "Job Application",
+  "type": "Pie",
+  "group_by_based_on": "status",
+  "group_by_type": "Count",
+  "filters_json": "[]",
+  "is_public": 1,
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Dashboard Chart",
+  "name": "Interviews by Month",
+  "chart_name": "Interviews by Month",
+  "chart_type": "Count",
+  "document_type": "Interview Schedule",
+  "type": "Bar",
+  "based_on": "interview_date",
+  "timespan": "Last Year",
+  "time_interval": "Monthly",
+  "filters_json": "[]",
+  "is_public": 1,
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Dashboard Chart",
+  "name": "Hiring Funnel",
+  "chart_name": "Hiring Funnel",
+  "chart_type": "Group By",
+  "document_type": "Job Application",
+  "type": "Donut",
+  "group_by_based_on": "status",
+  "group_by_type": "Count",
+  "filters_json": "[]",
+  "is_public": 1,
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Dashboard Chart",
+  "name": "Open Jobs by Department",
+  "chart_name": "Open Jobs by Department",
+  "chart_type": "Group By",
+  "document_type": "Job Posting",
+  "type": "Bar",
+  "group_by_based_on": "department",
+  "group_by_type": "Count",
+  "filters_json": "[[\"status\", \"=\", \"Open\"]]",
+  "is_public": 1,
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Dashboard Chart",
+  "name": "Candidate Pipeline",
+  "chart_name": "Candidate Pipeline",
+  "chart_type": "Group By",
+  "document_type": "Job Application",
+  "type": "Donut",
+  "group_by_based_on": "status",
+  "group_by_type": "Count",
+  "filters_json": "[]",
+  "is_public": 1,
+  "module": "HireFlow"
+ }
+]

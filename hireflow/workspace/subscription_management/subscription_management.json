@@ -1,0 +1,106 @@
+{
+ "app": "hireflow",
+ "category": "Modules",
+ "charts": [],
+ "content": "[{\"type\": \"card\", \"label\": \"Plans\", \"links\": [{\"type\": \"doctype\", \"name\": \"Subscription Plan\", \"label\": \"Subscription Plans\"}]}, {\"type\": \"card\", \"label\": \"Subscriptions\", \"links\": [{\"type\": \"doctype\", \"name\": \"Employer Subscription\", \"label\": \"Employer Subscriptions\"}]}, {\"type\": \"card\", \"label\": \"Payments\", \"links\": [{\"type\": \"doctype\", \"name\": \"Payment Transaction\", \"label\": \"Payment Transactions\"}]}]",
+ "creation": "2024-01-01 00:00:00.000000",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "credit-card",
+ "idx": 0,
+ "is_hidden": 0,
+ "is_standard": 1,
+ "label": "Subscription Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Plans",
+   "link_count": 0,
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subscription Plans",
+   "link_count": 0,
+   "link_to": "Subscription Plan",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Subscriptions",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Employer Subscriptions",
+   "link_count": 0,
+   "link_to": "Employer Subscription",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payments",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payment Transactions",
+   "link_count": 0,
+   "link_to": "Payment Transaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HireFlow",
+ "name": "Subscription Management",
+ "owner": "Administrator",
+ "parent_page": "Hireflow",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 10.0,
+ "shortcuts": [
+  {
+   "label": "New Plan",
+   "link_to": "Subscription Plan",
+   "onboard": 1,
+   "type": "DocType"
+  },
+  {
+   "label": "New Subscription",
+   "link_to": "Employer Subscription",
+   "onboard": 0,
+   "type": "DocType"
+  }
+ ],
+ "title": "Subscription Management"
+}

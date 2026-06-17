@@ -1,0 +1,136 @@
+{
+ "app": "hireflow",
+ "category": "Modules",
+ "charts": [],
+ "content": "[{\"type\": \"card\", \"label\": \"Job Openings\", \"links\": [{\"type\": \"doctype\", \"name\": \"Job Posting\", \"label\": \"Job Postings\"}]}, {\"type\": \"card\", \"label\": \"Masters\", \"links\": [{\"type\": \"doctype\", \"name\": \"Job Category\", \"label\": \"Job Categories\"}, {\"type\": \"doctype\", \"name\": \"Job Type\", \"label\": \"Job Types\"}, {\"type\": \"doctype\", \"name\": \"Job Location\", \"label\": \"Job Locations\"}, {\"type\": \"doctype\", \"name\": \"Job Skill\", \"label\": \"Job Skills\"}]}]",
+ "creation": "2024-01-01 00:00:00.000000",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "hide_custom": 0,
+ "icon": "briefcase",
+ "idx": 0,
+ "is_hidden": 0,
+ "is_standard": 1,
+ "label": "Job Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Openings",
+   "link_count": 0,
+   "onboard": 1,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Postings",
+   "link_count": 0,
+   "link_to": "Job Posting",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Masters",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Categories",
+   "link_count": 0,
+   "link_to": "Job Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Types",
+   "link_count": 0,
+   "link_to": "Job Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Locations",
+   "link_count": 0,
+   "link_to": "Job Location",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Job Skills",
+   "link_count": 0,
+   "link_to": "Job Skill",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Reports",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "HireFlow",
+ "name": "Job Management",
+ "owner": "Administrator",
+ "parent_page": "Hireflow",
+ "public": 1,
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 2.0,
+ "shortcuts": [
+  {
+   "label": "New Job Posting",
+   "link_to": "Job Posting",
+   "onboard": 1,
+   "type": "DocType"
+  },
+  {
+   "label": "New Category",
+   "link_to": "Job Category",
+   "onboard": 0,
+   "type": "DocType"
+  },
+  {
+   "label": "New Type",
+   "link_to": "Job Type",
+   "onboard": 0,
+   "type": "DocType"
+  },
+  {
+   "label": "New Location",
+   "link_to": "Job Location",
+   "onboard": 0,
+   "type": "DocType"
+  },
+  {
+   "label": "New Skill",
+   "link_to": "Job Skill",
+   "onboard": 0,
+   "type": "DocType"
+  }
+ ],
+ "title": "Job Management"
+}

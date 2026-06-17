@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include hireflow *.css
+recursive-include hireflow *.csv
+recursive-include hireflow *.html
+recursive-include hireflow *.ico
+recursive-include hireflow *.js
+recursive-include hireflow *.json
+recursive-include hireflow *.md
+recursive-include hireflow *.png
+recursive-include hireflow *.py
+recursive-include hireflow *.svg
+recursive-include hireflow *.txt
+recursive-exclude hireflow *.pyc

@@ -194,6 +194,7 @@ website_context = {
 
 # Home Pages
 role_home_page = {
+    "HireFlow Admin": "hireflow",
     "Candidate": "candidate-dashboard",
     "Employer": "employer-dashboard",
     "Recruiter": "recruiter-dashboard"

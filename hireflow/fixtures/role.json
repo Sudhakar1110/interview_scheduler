@@ -4,7 +4,7 @@
   "name": "HireFlow Admin",
   "role_name": "HireFlow Admin",
   "desk_access": 1,
-  "home_page": "/app/hireflow-dashboard",
+  "home_page": "/app/hireflow",
   "module": "HireFlow"
  },
  {
@@ -12,7 +12,7 @@
   "name": "Employer",
   "role_name": "Employer",
   "desk_access": 1,
-  "home_page": "/app/employer-dashboard",
+  "home_page": "/employer-dashboard",
   "module": "HireFlow"
  },
  {
@@ -20,7 +20,7 @@
   "name": "Recruiter",
   "role_name": "Recruiter",
   "desk_access": 1,
-  "home_page": "/app/recruiter-dashboard",
+  "home_page": "/recruiter-dashboard",
   "module": "HireFlow"
  },
  {

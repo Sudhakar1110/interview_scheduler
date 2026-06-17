@@ -1316,7 +1316,7 @@ def _create_payment_transactions():
         {"subscription": subscriptions[1], "company": "InnovateSoft Solutions", "transaction_date": add_days(today(), -60), "amount": 99, "currency": "USD", "payment_method": "Bank Transfer", "transaction_id": "TXN-2002-EFGH", "status": "Success"},
         {"subscription": subscriptions[2], "company": "DataFlow Analytics", "transaction_date": add_days(today(), -30), "amount": 0, "currency": "USD", "payment_method": "", "transaction_id": "", "status": "Success"},
         {"subscription": subscriptions[3], "company": "CloudBase Systems", "transaction_date": add_days(today(), -60), "amount": 999, "currency": "USD", "payment_method": "Credit Card", "transaction_id": "TXN-4001-ABCD", "status": "Success"},
-        {"subscription": subscriptions[3], "company": "CloudBase Systems", "transaction_date": add_days(today(), -30), "amount": 999, "currency": "USD", "payment_method": "Wire Transfer", "transaction_id": "TXN-4002-EFGH", "status": "Success"},
+        {"subscription": subscriptions[3], "company": "CloudBase Systems", "transaction_date": add_days(today(), -30), "amount": 999, "currency": "USD", "payment_method": "Bank Transfer", "transaction_id": "TXN-4002-EFGH", "status": "Success"},
     ]
 
     for t in transactions:

@@ -825,9 +825,8 @@ def sync_module_workspaces():
 def after_migrate():
     frappe.clear_cache()
     sync_module_workspaces()
-    # NOTE: create_demo_data() is intentionally NOT called here.
-    # Demo data insertion on every migrate causes LinkValidationError
-    # when referenced doctypes are not yet fully synced in the DB.
-    # Demo data is only created on fresh install (after_install) in developer mode.
+    # Create comprehensive demo data (safe at this point since all doctypes
+    # have been synced and fixtures have been imported)
+    create_demo_data()
     print("Clear browser cache and refresh Desk to see changes.")
     frappe.db.commit()

@@ -705,7 +705,8 @@ def sync_module_workspaces():
         shortcuts=[{"label": "New Candidate", "type": "DocType", "link_to": "Candidate Profile", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Candidates", "icon": "people"},
             {"type": "Link", "label": "Candidate Profiles", "link_type": "DocType", "link_to": "Candidate Profile"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Candidate Database", "link_type": "Report", "link_to": "Candidate Database"}])
     _make_workspace(title="ATS Management", module="HireFlow", icon="check", indicator_color="orange", sequence_id=5, parent_page="Hireflow",
         shortcuts=[{"label": "New Application", "type": "DocType", "link_to": "Job Application", "onboard": 1},
             {"label": "New Feedback", "type": "DocType", "link_to": "Interview Feedback", "onboard": 0}],
@@ -727,7 +728,8 @@ def sync_module_workspaces():
         shortcuts=[{"label": "New Panel Member", "type": "DocType", "link_to": "Panel Member", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Panel Members", "icon": "people"},
             {"type": "Link", "label": "All Panel Members", "link_type": "DocType", "link_to": "Panel Member"},
-            {"type": "Card Break", "label": "Reports", "icon": "folder"}])
+            {"type": "Card Break", "label": "Reports", "icon": "folder"},
+            {"type": "Link", "label": "Panel Member Directory", "link_type": "Report", "link_to": "Panel Member Directory"}])
     _make_workspace(title="Offer Management", module="HireFlow", icon="mail", indicator_color="pink", sequence_id=8, parent_page="Hireflow",
         shortcuts=[{"label": "New Offer Letter", "type": "DocType", "link_to": "Offer Letter", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Offers", "icon": "mail"},

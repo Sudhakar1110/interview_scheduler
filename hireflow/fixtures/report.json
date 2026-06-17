@@ -79,5 +79,14 @@
   "report_type": "Report Builder",
   "is_standard": "Yes",
   "module": "HireFlow"
+ },
+ {
+  "doctype": "Report",
+  "name": "Panel Member Directory",
+  "report_name": "Panel Member Directory",
+  "ref_doctype": "Panel Member",
+  "report_type": "Report Builder",
+  "is_standard": "Yes",
+  "module": "HireFlow"
  }
 ]

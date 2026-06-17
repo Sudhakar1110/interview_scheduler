@@ -1,54 +1,67 @@
 [
  {
   "doctype": "Workflow State",
+  "name": "Draft",
   "workflow_state_name": "Draft"
  },
  {
   "doctype": "Workflow State",
+  "name": "Applied",
   "workflow_state_name": "Applied"
  },
  {
   "doctype": "Workflow State",
+  "name": "Screening",
   "workflow_state_name": "Screening"
  },
  {
   "doctype": "Workflow State",
+  "name": "Interview",
   "workflow_state_name": "Interview"
  },
  {
   "doctype": "Workflow State",
+  "name": "Offer",
   "workflow_state_name": "Offer"
  },
  {
   "doctype": "Workflow State",
+  "name": "Hired",
   "workflow_state_name": "Hired"
  },
  {
   "doctype": "Workflow State",
+  "name": "Rejected",
   "workflow_state_name": "Rejected"
  },
  {
   "doctype": "Workflow State",
+  "name": "Pending Approval",
   "workflow_state_name": "Pending Approval"
  },
  {
   "doctype": "Workflow State",
+  "name": "Approved",
   "workflow_state_name": "Approved"
  },
  {
   "doctype": "Workflow State",
+  "name": "Sent",
   "workflow_state_name": "Sent"
  },
  {
   "doctype": "Workflow State",
+  "name": "Accepted",
   "workflow_state_name": "Accepted"
  },
  {
   "doctype": "Workflow State",
+  "name": "Declined",
   "workflow_state_name": "Declined"
  },
  {
   "doctype": "Workflow State",
+  "name": "Expired",
   "workflow_state_name": "Expired"
  }
 ]

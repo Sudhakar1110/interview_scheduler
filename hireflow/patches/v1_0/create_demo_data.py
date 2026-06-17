@@ -560,7 +560,7 @@ def _create_candidates():
     ]
 
     for c in candidates_data:
-        if not frappe.db.exists("Candidate Profile", c["email"]):
+        if not frappe.db.exists("Candidate Profile", {"email": c["email"]}):
             doc = frappe.get_doc({
                 "doctype": "Candidate Profile",
                 "naming_series": "CND-.YYYY.-.#####",

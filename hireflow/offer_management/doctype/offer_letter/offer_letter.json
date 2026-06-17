@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
+ "is_submittable": 1,
  "field_order": [
   "naming_series", "candidate", "job_posting", "company", "column_break_4", "offer_date", "status", "recruiter",
   "section_break_7", "position_title", "department", "joining_date", "column_break_10", "salary_offered", "currency", "negotiated",

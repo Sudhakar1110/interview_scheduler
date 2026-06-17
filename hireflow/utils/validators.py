@@ -19,17 +19,43 @@ def validate_interview_schedule(doc):
 
 
 def check_interviewer_availability(interview):
-    """Check if interviewer is available"""
-    conflicts = frappe.db.count("Interview Schedule", {
-        "interviewer": interview.interviewer,
-        "interview_date": interview.interview_date,
-        "interview_time": interview.interview_time,
-        "status": ["in", ["Scheduled", "Confirmed"]],
-        "name": ["!=", interview.name]
-    })
+    """Check if interviewers are available (checks child table interviewers)"""
+    if not interview.interviewers:
+        return
     
-    if conflicts > 0:
-        frappe.throw(_("Interviewer is not available at the selected time"))
+    # Collect interviewer names from child table
+    interviewer_names = [row.interviewer for row in interview.interviewers if row.interviewer]
+    if not interviewer_names:
+        return
+    
+    # Find other Interview Schedules at the same date/time
+    other_schedules = frappe.get_all("Interview Schedule",
+        filters={
+            "interview_date": interview.interview_date,
+            "interview_time": interview.interview_time,
+            "status": ["in", ["Scheduled", "Confirmed"]],
+            "name": ["!=", interview.name]
+        },
+        pluck="name"
+    )
+    
+    if not other_schedules:
+        return
+    
+    # Check if any of those schedules have the same interviewers
+    conflicting = frappe.db.get_all("Interview Panel",
+        filters={
+            "parent": ["in", other_schedules],
+            "interviewer": ["in", interviewer_names]
+        },
+        pluck="interviewer",
+        distinct=1
+    )
+    
+    if conflicting:
+        frappe.throw(_("Interviewer(s) {0} are not available at the selected time").format(
+            ", ".join(set(conflicting))
+        ))
 
 
 def check_candidate_availability(interview):

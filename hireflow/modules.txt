@@ -1,4 +1,4 @@
-Hireflow
+HireFlow
 Job Management
 Employer Management
 Candidate Management

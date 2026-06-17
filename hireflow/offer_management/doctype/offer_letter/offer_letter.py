@@ -9,6 +9,9 @@ class OfferLetter(Document):
     def validate(self):
         validate_offer_letter(self)
     
+    def on_update(self):
+        self.check_expiry()
+    
     def on_submit(self):
         self.send_offer_email()
         self.update_application()
@@ -27,5 +30,4 @@ class OfferLetter(Document):
     def check_expiry(self):
         if self.status == "Sent":
             if frappe.utils.getdate(self.expiry_date) < frappe.utils.getdate():
-                self.status = "Expired"
-                self.save()
+                self.db_set("status", "Expired")

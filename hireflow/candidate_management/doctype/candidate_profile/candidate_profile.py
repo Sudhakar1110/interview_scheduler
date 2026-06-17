@@ -8,11 +8,8 @@ class CandidateProfile(frappe.Document):
         self.calculate_total_experience()
     
     def validate_email(self):
-        if self.email:
-            if not frappe.db.exists("Candidate Profile", {"email": self.email, "name": ["!=", self.name]}):
-                pass
-            else:
-                frappe.throw("Candidate with this email already exists")
+        if self.email and frappe.db.exists("Candidate Profile", {"email": self.email, "name": ["!=", self.name]}):
+            frappe.throw("Candidate with this email already exists")
     
     def calculate_total_experience(self):
         total = 0

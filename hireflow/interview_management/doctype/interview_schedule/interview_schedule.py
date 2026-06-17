@@ -18,6 +18,7 @@ class InterviewSchedule(Document):
     def on_submit(self):
         self.send_invitation()
         self.update_application_status()
+        self.send_reminder()
     
     def send_invitation(self):
         try:
@@ -30,7 +31,8 @@ class InterviewSchedule(Document):
             from hireflow.tasks import send_interview_reminder_email
             send_interview_reminder_email(self)
             self.reminder_sent = 1
-            self.save()
+            # No self.save() here — called from on_submit() where the
+            # document is already being saved as part of the submit process.
         except:
             pass
     

@@ -19,9 +19,11 @@ class EmployeeOnboarding(Document):
     
     def create_employee(self):
         if not self.employee_created:
+            # Get the candidate's full name from the linked Candidate Profile
+            candidate_name = frappe.db.get_value("Candidate Profile", self.candidate, "full_name") or self.candidate
             employee = frappe.get_doc({
                 "doctype": "Employee",
-                "first_name": self.candidate,
+                "first_name": candidate_name,
                 "company": self.company,
                 "department": self.department,
                 "designation": self.designation,

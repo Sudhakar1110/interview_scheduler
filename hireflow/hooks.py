@@ -47,28 +47,19 @@ notification_config = "hireflow.notifications.get_notification_config"
 
 
 # Document Events
-# NOTE: Module paths below were not verified against actual files in this
-# review (e.g. hireflow/ats_management/doctype/job_application/job_application.py).
-# If any path/function is missing, Frappe raises an ImportError while loading
-# hooks at the start of `bench migrate`, which aborts migration before
-# fixtures (including Workspace) ever sync - producing the same symptom
-# ("workspace looks empty") for an unrelated reason. Run a full migrate and
-# read the traceback end-to-end rather than assuming hook registration succeeded.
+# NOTE: Controller methods (validate, on_submit, on_update) are automatically
+# called by Frappe's document lifecycle -- doc_events entries below are only
+# needed for ADDITIONAL hooks from other apps or for standalone functions.
+# All previous entries here referenced class methods which cannot be resolved
+# by frappe.get_attr(). Corresponding class methods on the controllers handle
+# these events automatically (e.g. InterviewSchedule.validate, 
+# JobApplication.on_update, OfferLetter.check_expiry, etc.).
+#
+# The only doc_event kept below is for validate on Interview Schedule pointing
+# to the standalone validator in utils/validators.py.
 doc_events = {
-    "Job Application": {
-        "on_submit": "hireflow.ats_management.doctype.job_application.job_application.on_submit",
-        "on_update": "hireflow.ats_management.doctype.job_application.job_application.on_update"
-    },
     "Interview Schedule": {
-        "on_submit": "hireflow.interview_management.doctype.interview_schedule.interview_schedule.send_reminder",
-        "validate": "hireflow.interview_management.doctype.interview_schedule.interview_schedule.validate_schedule"
-    },
-    "Offer Letter": {
-        "on_submit": "hireflow.offer_management.doctype.offer_letter.offer_letter.send_offer_email",
-        "on_update": "hireflow.offer_management.doctype.offer_letter.offer_letter.check_expiry"
-    },
-    "Employee Onboarding": {
-        "on_submit": "hireflow.hiring_management.doctype.employee_onboarding.employee_onboarding.create_employee"
+        "validate": "hireflow.utils.validators.validate_interview_schedule"
     }
 }
 
@@ -132,7 +123,7 @@ fixtures = [
             [
                 "module",
                 "=",
-                "Hireflow"
+                "HireFlow"
             ]
         ]
     },
@@ -142,7 +133,7 @@ fixtures = [
             [
                 "module",
                 "=",
-                "Hireflow"
+                "HireFlow"
             ]
         ]
     },

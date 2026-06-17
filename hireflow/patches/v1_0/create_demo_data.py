@@ -229,20 +229,32 @@ def _create_interview_schedules():
 
 
 def _create_offer_letters():
+    # Look up candidate and job posting by name
+    candidate_name = frappe.db.get_value("Candidate Profile", {"email": "john.doe@email.com"}, "name")
+    job_posting_name = frappe.db.get_value("Job Posting", {"job_title": "Senior Python Developer"}, "name")
+    if not candidate_name or not job_posting_name:
+        print("  Skipping offer letters - required demo data not found")
+        return
     offers = [
-        {"candidate_name": "John Doe", "candidate_email": "john.doe@email.com", "job_title": "Senior Python Developer", "company": "TechCorp Inc.", "offer_date": today(), "expiry_date": add_days(today(), 7), "status": "Draft", "salary": 155000, "currency": "USD", "annual_bonus": 15000, "stock_options": 5000, "start_date": add_days(today(), 30), "notes": "Standard offer package for senior engineering role."},
+        {"candidate": candidate_name, "job_posting": job_posting_name, "company": "TechCorp Inc.", "offer_date": today(), "expiry_date": add_days(today(), 7), "status": "Draft", "position_title": "Senior Python Developer", "department": "Engineering", "joining_date": add_days(today(), 30), "salary_offered": 155000, "currency": "USD", "reporting_to": "Engineering Manager", "work_location": "San Francisco, USA"},
     ]
     for o in offers:
-        if not frappe.db.exists("Offer Letter", {"candidate_email": o["candidate_email"], "job_title": o["job_title"]}):
+        if not frappe.db.exists("Offer Letter", {"candidate": o["candidate"], "job_posting": o["job_posting"]}):
             frappe.get_doc({"doctype": "Offer Letter", **o}).insert(ignore_permissions=True)
     print("  Created offer letters")
 
 
 def _create_onboarding():
+    candidate_name = frappe.db.get_value("Candidate Profile", {"email": "john.doe@email.com"}, "name")
+    job_posting_name = frappe.db.get_value("Job Posting", {"job_title": "Senior Python Developer"}, "name")
+    offer_name = frappe.db.get_value("Offer Letter", {"candidate": candidate_name}, "name") if candidate_name else None
+    if not candidate_name or not job_posting_name:
+        print("  Skipping onboarding records - required demo data not found")
+        return
     onboarding = [
-        {"candidate_name": "John Doe", "job_title": "Senior Python Developer", "company": "TechCorp Inc.", "offer_date": today(), "start_date": add_days(today(), 30), "department": "Engineering", "designation": "Senior Software Engineer", "status": "Pending", "onboarding_type": "Technical"},
+        {"candidate": candidate_name, "job_application": None, "offer_letter": offer_name, "company": "TechCorp Inc.", "joining_date": add_days(today(), 30), "status": "Pending", "department": "Engineering", "designation": "Senior Software Engineer"},
     ]
     for o in onboarding:
-        if not frappe.db.exists("Employee Onboarding", {"candidate_name": o["candidate_name"], "job_title": o["job_title"]}):
+        if not frappe.db.exists("Employee Onboarding", {"candidate": o["candidate"], "company": o["company"]}):
             frappe.get_doc({"doctype": "Employee Onboarding", **o}).insert(ignore_permissions=True)
     print("  Created onboarding records")

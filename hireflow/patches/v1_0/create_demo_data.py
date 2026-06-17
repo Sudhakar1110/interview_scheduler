@@ -11,13 +11,15 @@ def execute():
     _create_recruiters()
     _create_panel_members()
     _create_candidates()
+    # IMPORTANT: Create subscriptions BEFORE job postings because
+    # validate_job_posting() checks if the company has an active subscription
+    _create_subscriptions()
     _create_job_postings()
     _create_job_applications()
     _create_interview_schedules()
     _create_interview_feedback()
     _create_offer_letters()
     _create_onboarding()
-    _create_subscriptions()
     _create_payment_transactions()
     _create_messages()
     _create_notifications()

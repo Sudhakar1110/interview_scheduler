@@ -1,0 +1,65 @@
+[
+ {
+  "doctype": "Notification",
+  "name": "New Application Received",
+  "subject": "New Application for {{ job_posting }}",
+  "email_template": "Application Received",
+  "event": "Value Change",
+  "document_type": "Job Application",
+  "enabled": 1,
+  "module": "HireFlow",
+  "channel": "Email",
+  "value_changed": "status",
+  "condition": "doc.status == 'Applied'"
+ },
+ {
+  "doctype": "Notification",
+  "name": "Interview Scheduled",
+  "subject": "Interview Scheduled for {{ candidate }}",
+  "email_template": "Interview Invitation",
+  "event": "Value Change",
+  "document_type": "Interview Schedule",
+  "enabled": 1,
+  "module": "HireFlow",
+  "channel": "Email",
+  "value_changed": "status",
+  "condition": "doc.status == 'Scheduled'"
+ },
+ {
+  "doctype": "Notification",
+  "name": "Interview Reminder",
+  "subject": "Interview Reminder - Tomorrow",
+  "email_template": "Interview Reminder",
+  "event": "Days Before",
+  "document_type": "Interview Schedule",
+  "enabled": 1,
+  "module": "HireFlow",
+  "channel": "Email",
+  "days_in_advance": 1,
+  "date_changed": "interview_date"
+ },
+ {
+  "doctype": "Notification",
+  "name": "Offer Sent",
+  "subject": "Offer Letter Sent to {{ candidate }}",
+  "event": "Value Change",
+  "document_type": "Offer Letter",
+  "enabled": 1,
+  "module": "HireFlow",
+  "channel": "Email",
+  "value_changed": "status",
+  "condition": "doc.status == 'Sent'"
+ },
+ {
+  "doctype": "Notification",
+  "name": "Offer Accepted",
+  "subject": "Offer Accepted by {{ candidate }}",
+  "event": "Value Change",
+  "document_type": "Offer Letter",
+  "enabled": 1,
+  "module": "HireFlow",
+  "channel": "Email",
+  "value_changed": "status",
+  "condition": "doc.status == 'Accepted'"
+ }
+]

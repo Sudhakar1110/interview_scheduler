@@ -1,0 +1,176 @@
+[
+ {
+  "doctype": "Workflow",
+  "name": "Job Application Workflow",
+  "workflow_name": "Job Application Workflow",
+  "document_type": "Job Application",
+  "is_active": 1,
+  "workflow_state_field": "workflow_state",
+  "module": "HireFlow",
+  "states": [
+   {
+    "state": "Draft",
+    "doc_status": 0,
+    "allow_edit": "All"
+   },
+   {
+    "state": "Applied",
+    "doc_status": 0,
+    "allow_edit": "Recruiter"
+   },
+   {
+    "state": "Screening",
+    "doc_status": 0,
+    "allow_edit": "Recruiter"
+   },
+   {
+    "state": "Interview",
+    "doc_status": 0,
+    "allow_edit": "Recruiter"
+   },
+   {
+    "state": "Offer",
+    "doc_status": 0,
+    "allow_edit": "Employer"
+   },
+   {
+    "state": "Hired",
+    "doc_status": 1,
+    "allow_edit": "Employer"
+   },
+   {
+    "state": "Rejected",
+    "doc_status": 0,
+    "allow_edit": "Recruiter"
+   }
+  ],
+  "transitions": [
+   {
+    "state": "Draft",
+    "action": "Submit",
+    "next_state": "Applied",
+    "allowed": "Recruiter"
+   },
+   {
+    "state": "Applied",
+    "action": "Screen",
+    "next_state": "Screening",
+    "allowed": "Recruiter"
+   },
+   {
+    "state": "Screening",
+    "action": "Shortlist",
+    "next_state": "Interview",
+    "allowed": "Recruiter"
+   },
+   {
+    "state": "Interview",
+    "action": "Select",
+    "next_state": "Offer",
+    "allowed": "Employer"
+   },
+   {
+    "state": "Interview",
+    "action": "Reject",
+    "next_state": "Rejected",
+    "allowed": "Recruiter"
+   },
+   {
+    "state": "Offer",
+    "action": "Hire",
+    "next_state": "Hired",
+    "allowed": "Employer"
+   },
+   {
+    "state": "Offer",
+    "action": "Decline",
+    "next_state": "Rejected",
+    "allowed": "Employer"
+   }
+  ]
+ },
+ {
+  "doctype": "Workflow",
+  "name": "Offer Letter Workflow",
+  "workflow_name": "Offer Letter Workflow",
+  "document_type": "Offer Letter",
+  "is_active": 1,
+  "workflow_state_field": "workflow_state",
+  "module": "HireFlow",
+  "states": [
+   {
+    "state": "Draft",
+    "doc_status": 0,
+    "allow_edit": "Recruiter"
+   },
+   {
+    "state": "Pending Approval",
+    "doc_status": 0,
+    "allow_edit": "Employer"
+   },
+   {
+    "state": "Approved",
+    "doc_status": 1,
+    "allow_edit": "Employer"
+   },
+   {
+    "state": "Sent",
+    "doc_status": 1,
+    "allow_edit": "Recruiter"
+   },
+   {
+    "state": "Accepted",
+    "doc_status": 1,
+    "allow_edit": "Recruiter"
+   },
+   {
+    "state": "Declined",
+    "doc_status": 1,
+    "allow_edit": "Recruiter"
+   },
+   {
+    "state": "Expired",
+    "doc_status": 1,
+    "allow_edit": "Recruiter"
+   }
+  ],
+  "transitions": [
+   {
+    "state": "Draft",
+    "action": "Submit for Approval",
+    "next_state": "Pending Approval",
+    "allowed": "Recruiter"
+   },
+   {
+    "state": "Pending Approval",
+    "action": "Approve",
+    "next_state": "Approved",
+    "allowed": "Employer"
+   },
+   {
+    "state": "Pending Approval",
+    "action": "Reject",
+    "next_state": "Draft",
+    "allowed": "Employer"
+   },
+   {
+    "state": "Approved",
+    "action": "Send Offer",
+    "next_state": "Sent",
+    "allowed": "Recruiter"
+   },
+   {
+    "state": "Sent",
+    "action": "Accept",
+    "next_state": "Accepted",
+    "allowed": "Candidate"
+   },
+   {
+    "state": "Sent",
+    "action": "Decline",
+    "next_state": "Declined",
+    "allowed": "Candidate"
+   }
+  ]
+ }
+]

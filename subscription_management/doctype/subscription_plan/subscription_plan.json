@@ -1,0 +1,27 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:plan_name",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["plan_name", "price", "billing_cycle", "column_break_4", "max_jobs", "max_applications", "is_featured", "section_break_7", "features", "section_break_9", "is_active"],
+ "fields": [
+  {"fieldname": "plan_name", "fieldtype": "Data", "in_list_view": 1, "label": "Plan Name", "reqd": 1, "unique": 1},
+  {"fieldname": "price", "fieldtype": "Currency", "in_list_view": 1, "label": "Price", "reqd": 1},
+  {"fieldname": "billing_cycle", "fieldtype": "Select", "in_list_view": 1, "label": "Billing Cycle", "options": "Monthly\nQuarterly\nYearly", "default": "Monthly"},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "max_jobs", "fieldtype": "Int", "label": "Max Job Postings", "description": "Use -1 for unlimited"},
+  {"fieldname": "max_applications", "fieldtype": "Int", "label": "Max Applications/Month", "description": "Use -1 for unlimited"},
+  {"fieldname": "is_featured", "fieldtype": "Check", "label": "Featured Plan"},
+  {"fieldname": "section_break_7", "fieldtype": "Section Break", "label": "Features"},
+  {"fieldname": "features", "fieldtype": "Text", "label": "Features (one per line)"},
+  {"fieldname": "section_break_9", "fieldtype": "Section Break"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Subscription Management",
+ "name": "Subscription Plan",
+ "permissions": [{"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1, "delete": 1}]
+}

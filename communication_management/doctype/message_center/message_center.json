@@ -1,0 +1,31 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["message_type", "sender", "recipients", "column_break_4", "subject", "send_date", "status", "section_break_7", "message_content", "column_break_9", "attachments", "related_to", "related_doctype"],
+ "fields": [
+  {"fieldname": "message_type", "fieldtype": "Select", "in_list_view": 1, "label": "Message Type", "options": "Email\nSMS\nIn-App", "default": "Email"},
+  {"fieldname": "sender", "fieldtype": "Data", "label": "Sender"},
+  {"fieldname": "recipients", "fieldtype": "Small Text", "label": "Recipients (comma separated)", "reqd": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "subject", "fieldtype": "Data", "label": "Subject"},
+  {"fieldname": "send_date", "fieldtype": "Datetime", "label": "Send Date", "default": "Now"},
+  {"fieldname": "status", "fieldtype": "Select", "in_list_view": 1, "label": "Status", "options": "Draft\nScheduled\nSent\nFailed", "default": "Draft"},
+  {"fieldname": "section_break_7", "fieldtype": "Section Break"},
+  {"fieldname": "message_content", "fieldtype": "Text Editor", "label": "Message Content"},
+  {"fieldname": "column_break_9", "fieldtype": "Column Break"},
+  {"fieldname": "attachments", "fieldtype": "Small Text", "label": "Attachments"},
+  {"fieldname": "related_to", "fieldtype": "Data", "label": "Related To"},
+  {"fieldname": "related_doctype", "fieldtype": "Link", "label": "Related DocType", "options": "DocType"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Communication Management",
+ "name": "Message Center",
+ "permissions": [
+  {"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Recruiter", "read": 1, "write": 1, "create": 1}
+ ]
+}

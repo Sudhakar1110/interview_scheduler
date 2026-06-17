@@ -1,0 +1,27 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["subject", "for_user", "column_break_3", "type", "document_type", "document_name", "section_break_6", "from_user", "email_status", "column_break_8", "sent_on", "read_on"],
+ "fields": [
+  {"fieldname": "subject", "fieldtype": "Data", "in_list_view": 1, "label": "Subject"},
+  {"fieldname": "for_user", "fieldtype": "Link", "in_list_view": 1, "label": "For User", "options": "User"},
+  {"fieldname": "column_break_3", "fieldtype": "Column Break"},
+  {"fieldname": "type", "fieldtype": "Select", "label": "Type", "options": "Alert\nAssignment\nMention\nShare\nSubmit"},
+  {"fieldname": "document_type", "fieldtype": "Link", "label": "Document Type", "options": "DocType"},
+  {"fieldname": "document_name", "fieldtype": "Dynamic Link", "label": "Document Name", "options": "document_type"},
+  {"fieldname": "section_break_6", "fieldtype": "Section Break"},
+  {"fieldname": "from_user", "fieldtype": "Link", "label": "From User", "options": "User"},
+  {"fieldname": "email_status", "fieldtype": "Select", "label": "Email Status", "options": "Sent\nFailed\nNot Sent"},
+  {"fieldname": "column_break_8", "fieldtype": "Column Break"},
+  {"fieldname": "sent_on", "fieldtype": "Datetime", "label": "Sent On"},
+  {"fieldname": "read_on", "fieldtype": "Datetime", "label": "Read On"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Communication Management",
+ "name": "Notification Log",
+ "permissions": [{"role": "HireFlow Admin", "read": 1, "write": 1}]
+}

@@ -1,0 +1,200 @@
+/* HireFlow Custom CSS */
+
+/* Variables */
+:root {
+    --hf-primary: #4F46E5;
+    --hf-secondary: #10B981;
+    --hf-danger: #EF4444;
+    --hf-warning: #F59E0B;
+    --hf-info: #3B82F6;
+    --hf-dark: #1F2937;
+    --hf-light: #F3F4F6;
+}
+
+/* General Styles */
+.hireflow-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Card Styles */
+.hf-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.hf-card-header {
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.hf-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--hf-dark);
+}
+
+/* Button Styles */
+.hf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hf-btn-primary {
+    background-color: var(--hf-primary);
+    color: white;
+    border: none;
+}
+
+.hf-btn-primary:hover {
+    background-color: #4338CA;
+}
+
+.hf-btn-secondary {
+    background-color: var(--hf-secondary);
+    color: white;
+    border: none;
+}
+
+.hf-btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--hf-primary);
+    color: var(--hf-primary);
+}
+
+/* Status Badges */
+.hf-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.hf-badge-success {
+    background-color: #D1FAE5;
+    color: #065F46;
+}
+
+.hf-badge-warning {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
+
+.hf-badge-danger {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+.hf-badge-info {
+    background-color: #DBEAFE;
+    color: #1E40AF;
+}
+
+/* Form Styles */
+.hf-form-group {
+    margin-bottom: 20px;
+}
+
+.hf-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--hf-dark);
+}
+
+.hf-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.hf-input:focus {
+    outline: none;
+    border-color: var(--hf-primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* Dashboard Styles */
+.hf-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.hf-stat-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hf-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.hf-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--hf-dark);
+}
+
+.hf-stat-label {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+/* Table Styles */
+.hf-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.hf-table th,
+.hf-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.hf-table th {
+    font-weight: 600;
+    color: var(--hf-dark);
+    background-color: var(--hf-light);
+}
+
+.hf-table tr:hover {
+    background-color: var(--hf-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hf-dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hf-stat-card {
+        margin-bottom: 15px;
+    }
+}

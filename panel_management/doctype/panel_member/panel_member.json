@@ -1,0 +1,34 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:full_name",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["full_name", "user", "email", "phone", "column_break_5", "designation", "department", "company", "section_break_8", "skills", "section_break_10", "availability", "column_break_12", "max_interviews_per_day", "is_active"],
+ "fields": [
+  {"fieldname": "full_name", "fieldtype": "Data", "in_list_view": 1, "label": "Full Name", "reqd": 1},
+  {"fieldname": "user", "fieldtype": "Link", "label": "User", "options": "User"},
+  {"fieldname": "email", "fieldtype": "Data", "label": "Email"},
+  {"fieldname": "phone", "fieldtype": "Data", "label": "Phone"},
+  {"fieldname": "column_break_5", "fieldtype": "Column Break"},
+  {"fieldname": "designation", "fieldtype": "Data", "label": "Designation"},
+  {"fieldname": "department", "fieldtype": "Data", "label": "Department"},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company Profile"},
+  {"fieldname": "section_break_8", "fieldtype": "Section Break", "label": "Skills & Expertise"},
+  {"fieldname": "skills", "fieldtype": "Table", "label": "Skills", "options": "Panel Skill"},
+  {"fieldname": "section_break_10", "fieldtype": "Section Break", "label": "Availability Settings"},
+  {"fieldname": "availability", "fieldtype": "Table", "label": "Availability", "options": "Panel Availability"},
+  {"fieldname": "column_break_12", "fieldtype": "Column Break"},
+  {"fieldname": "max_interviews_per_day", "fieldtype": "Int", "label": "Max Interviews/Day", "default": "5"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Panel Management",
+ "name": "Panel Member",
+ "permissions": [
+  {"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Recruiter", "read": 1, "write": 1, "create": 1}
+ ]
+}

@@ -1,0 +1,99 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Employer Dashboard - HireFlow{% endblock %}
+
+{% block page_content %}
+<div class="dashboard-page employer-dashboard">
+    <div class="dashboard-header">
+        <h1>Employer Dashboard</h1>
+        <div class="header-actions">
+            <a href="/app/job-posting/new" class="btn btn-primary">Post New Job</a>
+        </div>
+    </div>
+    
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <h3>{{ stats.open_jobs }}</h3>
+            <p>Open Jobs</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ stats.total_applications }}</h3>
+            <p>Total Applications</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ stats.interviews_scheduled }}</h3>
+            <p>Interviews Scheduled</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ stats.hired }}</h3>
+            <p>Hired</p>
+        </div>
+    </div>
+    
+    <div class="dashboard-sections">
+        <section class="dashboard-section">
+            <h2>Recent Job Postings</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Applications</th>
+                        <th>Posted Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for job in jobs %}
+                    <tr>
+                        <td>{{ job.job_title }}</td>
+                        <td>{{ job.application_count }}</td>
+                        <td>{{ job.posted_date }}</td>
+                        <td><span class="badge badge-{{ job.status|lower }}">{{ job.status }}</span></td>
+                        <td>
+                            <a href="/app/job-posting/{{ job.name }}">View</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5">No jobs posted yet. <a href="/app/job-posting/new">Post a Job</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="dashboard-section">
+            <h2>Recent Applications</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Job</th>
+                        <th>Applied Date</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for application in applications %}
+                    <tr>
+                        <td>{{ application.candidate_name }}</td>
+                        <td>{{ application.job_title }}</td>
+                        <td>{{ application.application_date }}</td>
+                        <td><span class="badge badge-{{ application.status|lower }}">{{ application.status }}</span></td>
+                        <td>
+                            <a href="/app/job-application/{{ application.name }}">Review</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5">No applications yet</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
+{% endblock %}

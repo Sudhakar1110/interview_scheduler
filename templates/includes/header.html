@@ -1,0 +1,101 @@
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="/">
+                    <img src="/assets/hireflow/images/logo.png" alt="HireFlow" height="40">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/jobs">Jobs</a></li>
+                    <li><a href="/companies">Companies</a></li>
+                    <li><a href="/pricing">Pricing</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                {% if frappe.session.user == 'Guest' %}
+                <a href="/login" class="btn btn-outline">Login</a>
+                <a href="/signup" class="btn btn-primary">Sign Up</a>
+                {% else %}
+                <a href="/me" class="btn btn-outline">My Account</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+.main-header {
+    background: white;
+    border-bottom: 1px solid #E5E7EB;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-list li a:hover {
+    color: #4F46E5;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: #4F46E5;
+    color: white;
+}
+
+.btn-outline {
+    border: 1px solid #4F46E5;
+    color: #4F46E5;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+</style>

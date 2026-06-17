@@ -1,0 +1,82 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ job.job_title }} at {{ job.company }} - HireFlow{% endblock %}
+
+{% block page_content %}
+<div class="job-detail-page">
+    <div class="job-header-section">
+        <h1>{{ job.job_title }}</h1>
+        <div class="company-info">
+            <span class="company-name">{{ job.company }}</span>
+            <span class="department">{{ job.department }}</span>
+        </div>
+        <div class="job-meta">
+            <span class="meta-item"><i class="icon-map-marker"></i> {{ job.location or 'Remote' }}</span>
+            <span class="meta-item"><i class="icon-briefcase"></i> {{ job.job_type }}</span>
+            <span class="meta-item"><i class="icon-calendar"></i> Posted {{ job.posted_date }}</span>
+        </div>
+    </div>
+    
+    <div class="job-content">
+        <div class="job-main">
+            <section class="job-section">
+                <h2>Job Description</h2>
+                {{ job.job_description }}
+            </section>
+            
+            {% if job.responsibilities %}
+            <section class="job-section">
+                <h2>Responsibilities</h2>
+                {{ job.responsibilities }}
+            </section>
+            {% endif %}
+            
+            {% if job.requirements %}
+            <section class="job-section">
+                <h2>Requirements</h2>
+                {{ job.requirements }}
+            </section>
+            {% endif %}
+            
+            {% if job.benefits %}
+            <section class="job-section">
+                <h2>Benefits</h2>
+                {{ job.benefits }}
+            </section>
+            {% endif %}
+            
+            <section class="job-section">
+                <h2>Required Skills</h2>
+                <div class="skills-list">
+                    {% for skill in job.required_skills %}
+                    <span class="skill-badge">{{ skill.skill }}</span>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+        
+        <div class="job-sidebar">
+            <div class="apply-card">
+                <h3>Apply for this position</h3>
+                {% if job.status == 'Open' %}
+                <a href="/apply/{{ job.name }}" class="btn btn-primary btn-block">Apply Now</a>
+                {% else %}
+                <button class="btn btn-secondary btn-block" disabled>Position Closed</button>
+                {% endif %}
+            </div>
+            
+            <div class="job-summary-card">
+                <h4>Job Summary</h4>
+                <ul>
+                    <li><strong>Job Category:</strong> {{ job.job_category }}</li>
+                    <li><strong>Experience:</strong> {{ job.min_experience or 0 }} - {{ job.max_experience or 0 }} years</li>
+                    {% if job.min_salary %}
+                    <li><strong>Salary:</strong> {{ job.currency }} {{ job.min_salary|int }} - {{ job.max_salary|int }}</li>
+                    {% endif %}
+                    <li><strong>Deadline:</strong> {{ job.application_deadline }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

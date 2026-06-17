@@ -1,0 +1,35 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["interview", "candidate", "job_application", "interviewer", "column_break_4", "interview_date", "interview_round", "status", "feedback_rating", "section_break_8", "strengths", "weaknesses", "column_break_10", "overall_feedback", "recommendation", "decision"],
+ "fields": [
+  {"fieldname": "interview", "fieldtype": "Link", "label": "Interview Schedule", "options": "Interview Schedule"},
+  {"fieldname": "candidate", "fieldtype": "Link", "label": "Candidate", "options": "Candidate Profile"},
+  {"fieldname": "job_application", "fieldtype": "Link", "label": "Job Application", "options": "Job Application"},
+  {"fieldname": "interviewer", "fieldtype": "Link", "label": "Interviewer", "options": "User"},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "interview_date", "fieldtype": "Date", "label": "Interview Date"},
+  {"fieldname": "interview_round", "fieldtype": "Data", "label": "Interview Round"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Pending\nSubmitted", "default": "Pending"},
+  {"fieldname": "feedback_rating", "fieldtype": "Int", "label": "Rating (1-10)"},
+  {"fieldname": "section_break_8", "fieldtype": "Section Break", "label": "Feedback"},
+  {"fieldname": "strengths", "fieldtype": "Small Text", "label": "Strengths"},
+  {"fieldname": "weaknesses", "fieldtype": "Small Text", "label": "Areas for Improvement"},
+  {"fieldname": "column_break_10", "fieldtype": "Column Break"},
+  {"fieldname": "overall_feedback", "fieldtype": "Text Editor", "label": "Overall Feedback"},
+  {"fieldname": "recommendation", "fieldtype": "Select", "label": "Recommendation", "options": "Strong Hire\nHire\nNo Hire\nStrong No Hire"},
+  {"fieldname": "decision", "fieldtype": "Select", "label": "Decision", "options": "Proceed\nHold\nReject"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "ATS Management",
+ "name": "Interview Feedback",
+ "permissions": [
+  {"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Recruiter", "read": 1, "write": 1},
+  {"role": "Interviewer", "read": 1, "write": 1, "create": 1}
+ ]
+}

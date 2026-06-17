@@ -1,0 +1,33 @@
+[
+ {
+  "doctype": "Custom Field",
+  "name": "Job Posting-hireflow_section",
+  "fieldname": "hireflow_section",
+  "fieldtype": "Section Break",
+  "insert_after": "column_break_33",
+  "label": "HireFlow Settings",
+  "module": "HireFlow",
+  "dt": "Job Posting"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Employee-hireflow_employee_id",
+  "fieldname": "hireflow_employee_id",
+  "fieldtype": "Data",
+  "insert_after": "employee_number",
+  "label": "HireFlow Employee ID",
+  "module": "HireFlow",
+  "dt": "Employee"
+ },
+ {
+  "doctype": "Custom Field",
+  "name": "Employee-hireflow_onboarding",
+  "fieldname": "hireflow_onboarding",
+  "fieldtype": "Link",
+  "insert_after": "hireflow_employee_id",
+  "label": "Onboarding Reference",
+  "module": "HireFlow",
+  "options": "Employee Onboarding",
+  "dt": "Employee"
+ }
+]

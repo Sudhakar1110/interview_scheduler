@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["naming_series", "subscription", "company", "column_break_4", "transaction_date", "amount", "currency", "payment_method", "transaction_id", "status", "section_break_9", "invoice_url", "column_break_11", "notes"],
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "PAY-.YYYY.MM.-.#####", "reqd": 1},
+  {"fieldname": "subscription", "fieldtype": "Link", "label": "Subscription", "options": "Employer Subscription"},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company Profile"},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "transaction_date", "fieldtype": "Date", "label": "Transaction Date", "default": "Today"},
+  {"fieldname": "amount", "fieldtype": "Currency", "label": "Amount", "reqd": 1},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency", "default": "USD"},
+  {"fieldname": "payment_method", "fieldtype": "Select", "label": "Payment Method", "options": "Credit Card\nDebit Card\nBank Transfer\nPayPal\nOther"},
+  {"fieldname": "transaction_id", "fieldtype": "Data", "label": "Transaction ID"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Success\nFailed\nPending\nRefunded", "default": "Success"},
+  {"fieldname": "section_break_9", "fieldtype": "Section Break"},
+  {"fieldname": "invoice_url", "fieldtype": "Data", "label": "Invoice URL"},
+  {"fieldname": "column_break_11", "fieldtype": "Column Break"},
+  {"fieldname": "notes", "fieldtype": "Small Text", "label": "Notes"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Subscription Management",
+ "name": "Payment Transaction",
+ "permissions": [{"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1}]
+}

@@ -1,0 +1,43 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:company_name",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["company_name", "user", "website", "industry", "company_size", "section_break_5", "description", "column_break_7", "founded_year", "headquarters", "section_break_10", "contact_email", "contact_phone", "column_break_13", "address", "city", "state", "country", "pincode", "section_break_17", "social_links", "column_break_19", "is_active", "subscription_plan"],
+ "fields": [
+  {"fieldname": "company_name", "fieldtype": "Data", "in_list_view": 1, "label": "Company Name", "reqd": 1},
+  {"fieldname": "user", "fieldtype": "Link", "label": "User", "options": "User"},
+  {"fieldname": "website", "fieldtype": "Data", "label": "Website"},
+  {"fieldname": "industry", "fieldtype": "Data", "label": "Industry"},
+  {"fieldname": "company_size", "fieldtype": "Select", "label": "Company Size", "options": "1-10\n11-50\n51-200\n201-500\n501-1000\n1000+"},
+  {"fieldname": "section_break_5", "fieldtype": "Section Break"},
+  {"fieldname": "description", "fieldtype": "Text Editor", "label": "Company Description"},
+  {"fieldname": "column_break_7", "fieldtype": "Column Break"},
+  {"fieldname": "founded_year", "fieldtype": "Int", "label": "Founded Year"},
+  {"fieldname": "headquarters", "fieldtype": "Data", "label": "Headquarters"},
+  {"fieldname": "section_break_10", "fieldtype": "Section Break", "label": "Contact Information"},
+  {"fieldname": "contact_email", "fieldtype": "Data", "label": "Contact Email"},
+  {"fieldname": "contact_phone", "fieldtype": "Data", "label": "Contact Phone"},
+  {"fieldname": "column_break_13", "fieldtype": "Column Break"},
+  {"fieldname": "address", "fieldtype": "Text", "label": "Address"},
+  {"fieldname": "city", "fieldtype": "Data", "label": "City"},
+  {"fieldname": "state", "fieldtype": "Data", "label": "State"},
+  {"fieldname": "country", "fieldtype": "Link", "label": "Country", "options": "Country"},
+  {"fieldname": "pincode", "fieldtype": "Data", "label": "Pincode"},
+  {"fieldname": "section_break_17", "fieldtype": "Section Break", "label": "Settings"},
+  {"fieldname": "social_links", "fieldtype": "Text", "label": "Social Links (LinkedIn, Twitter, etc.)"},
+  {"fieldname": "column_break_19", "fieldtype": "Column Break"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1"},
+  {"fieldname": "subscription_plan", "fieldtype": "Link", "label": "Subscription Plan", "options": "Subscription Plan"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Employer Management",
+ "name": "Company Profile",
+ "permissions": [
+  {"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Employer", "read": 1, "write": 1, "create": 1}
+ ]
+}

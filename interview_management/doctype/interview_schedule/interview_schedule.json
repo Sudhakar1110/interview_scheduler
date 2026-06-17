@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series", "job_posting", "candidate", "company", "column_break_4", "interview_date", "interview_time", "duration", "status",
+  "section_break_8", "interview_type", "interview_mode", "column_break_11", "meeting_link", "location",
+  "section_break_13", "interviewers", "column_break_15", "interview_round", "feedback_required",
+  "section_break_18", "questions_to_ask", "column_break_20", "notes", "reminder_sent"
+ ],
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "INT-.YYYY.MM.DD.-.####", "reqd": 1},
+  {"fieldname": "job_posting", "fieldtype": "Link", "in_list_view": 1, "label": "Job Posting", "options": "Job Posting", "reqd": 1},
+  {"fieldname": "candidate", "fieldtype": "Link", "in_list_view": 1, "label": "Candidate", "options": "Candidate Profile", "reqd": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company Profile", "reqd": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "interview_date", "fieldtype": "Date", "in_list_view": 1, "label": "Interview Date", "reqd": 1},
+  {"fieldname": "interview_time", "fieldtype": "Time", "label": "Interview Time", "reqd": 1},
+  {"fieldname": "duration", "fieldtype": "Data", "label": "Duration", "default": "60 mins"},
+  {"fieldname": "status", "fieldtype": "Select", "in_list_view": 1, "label": "Status", "options": "Scheduled\nConfirmed\nCompleted\nCancelled\nRescheduled", "default": "Scheduled"},
+  {"fieldname": "section_break_8", "fieldtype": "Section Break", "label": "Interview Details"},
+  {"fieldname": "interview_type", "fieldtype": "Select", "label": "Interview Type", "options": "Technical\nHR\nPanel\nFinal\nCultural Fit", "reqd": 1},
+  {"fieldname": "interview_mode", "fieldtype": "Select", "label": "Mode", "options": "In-Person\nVideo Call\nPhone Call", "default": "Video Call"},
+  {"fieldname": "column_break_11", "fieldtype": "Column Break"},
+  {"fieldname": "meeting_link", "fieldtype": "Data", "label": "Meeting Link"},
+  {"fieldname": "location", "fieldtype": "Data", "label": "Location"},
+  {"fieldname": "section_break_13", "fieldtype": "Section Break", "label": "Interview Panel"},
+  {"fieldname": "interviewers", "fieldtype": "Table", "label": "Interviewers", "options": "Interview Panel"},
+  {"fieldname": "column_break_15", "fieldtype": "Column Break"},
+  {"fieldname": "interview_round", "fieldtype": "Int", "label": "Round Number"},
+  {"fieldname": "feedback_required", "fieldtype": "Check", "label": "Feedback Required", "default": "1"},
+  {"fieldname": "section_break_18", "fieldtype": "Section Break", "label": "Notes"},
+  {"fieldname": "questions_to_ask", "fieldtype": "Text Editor", "label": "Questions to Ask"},
+  {"fieldname": "column_break_20", "fieldtype": "Column Break"},
+  {"fieldname": "notes", "fieldtype": "Small Text", "label": "Internal Notes"},
+  {"fieldname": "reminder_sent", "fieldtype": "Check", "hidden": 1}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Interview Management",
+ "name": "Interview Schedule",
+ "permissions": [
+  {"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Recruiter", "read": 1, "write": 1, "create": 1},
+  {"role": "Employer", "read": 1, "write": 1}
+ ]
+}

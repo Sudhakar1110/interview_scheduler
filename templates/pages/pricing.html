@@ -1,0 +1,54 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Pricing - HireFlow{% endblock %}
+
+{% block page_content %}
+<div class="pricing-page">
+    <div class="hero-section">
+        <h1>Simple, Transparent Pricing</h1>
+        <p>Choose the plan that fits your hiring needs</p>
+    </div>
+    
+    <div class="pricing-grid">
+        {% for plan in plans %}
+        <div class="pricing-card {% if plan.is_featured %}featured{% endif %}">
+            {% if plan.is_featured %}
+            <span class="popular-badge">Most Popular</span>
+            {% endif %}
+            <h3>{{ plan.plan_name }}</h3>
+            <div class="price">
+                <span class="currency">$</span>
+                <span class="amount">{{ plan.price }}</span>
+                <span class="period">/{{ plan.billing_cycle|lower }}</span>
+            </div>
+            <ul class="features-list">
+                {% for feature in plan.features.split('\n') %}
+                <li>{{ feature }}</li>
+                {% endfor %}
+                <li><strong>{{ plan.max_jobs if plan.max_jobs > 0 else 'Unlimited' }}</strong> job postings</li>
+                <li><strong>{{ plan.max_applications if plan.max_applications > 0 else 'Unlimited' }}</strong> applications/month</li>
+            </ul>
+            <a href="/signup?plan={{ plan.name }}" class="btn {% if plan.is_featured %}btn-primary{% else %}btn-outline{% endif %}">Get Started</a>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <h4>Can I change plans later?</h4>
+                <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Is there a free trial?</h4>
+                <p>Yes, all paid plans come with a 14-day free trial. No credit card required.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What payment methods do you accept?</h4>
+                <p>We accept all major credit cards, PayPal, and bank transfers for annual plans.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

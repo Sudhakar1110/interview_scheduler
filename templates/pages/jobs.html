@@ -1,0 +1,64 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Browse Jobs - HireFlow{% endblock %}
+
+{% block page_content %}
+<div class="jobs-page">
+    <div class="hero-section">
+        <h1>Find Your Dream Job</h1>
+        <p>Search through {{ jobs|length }} job opportunities</p>
+    </div>
+    
+    <div class="jobs-container">
+        <div class="filters-section">
+            <div class="filter-group">
+                <label>Job Category</label>
+                <select name="category" class="form-control">
+                    <option value="">All Categories</option>
+                    {% for category in categories %}
+                    <option value="{{ category.name }}">{{ category.category_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Job Type</label>
+                <select name="type" class="form-control">
+                    <option value="">All Types</option>
+                    {% for type in job_types %}
+                    <option value="{{ type.name }}">{{ type.type_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Location</label>
+                <input type="text" name="location" class="form-control" placeholder="Enter location">
+            </div>
+        </div>
+        
+        <div class="jobs-list">
+            {% for job in jobs %}
+            <div class="job-card">
+                <div class="job-header">
+                    <h3><a href="/jobs/{{ job.name }}">{{ job.job_title }}</a></h3>
+                    <span class="company-name">{{ job.company }}</span>
+                </div>
+                <div class="job-details">
+                    <span class="job-type">{{ job.job_type }}</span>
+                    <span class="job-location">{{ job.location or 'Remote' }}</span>
+                    <span class="posted-date">Posted {{ job.posted_date }}</span>
+                </div>
+                <p class="job-description">{{ job.job_description[:200] }}...</p>
+                <div class="job-actions">
+                    <a href="/jobs/{{ job.name }}" class="btn btn-primary">View Details</a>
+                    <a href="/apply/{{ job.name }}" class="btn btn-outline">Apply Now</a>
+                </div>
+            </div>
+            {% else %}
+            <div class="no-jobs">
+                <p>No jobs found matching your criteria.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

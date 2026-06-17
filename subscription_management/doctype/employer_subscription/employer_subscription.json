@@ -1,0 +1,35 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["naming_series", "company", "subscription_plan", "column_break_4", "start_date", "end_date", "status", "auto_renew", "section_break_7", "price", "currency", "column_break_10", "billing_email", "payment_status", "section_break_13", "payment_history"],
+ "fields": [
+  {"fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "SUB-.YYYY.-.#####", "reqd": 1},
+  {"fieldname": "company", "fieldtype": "Link", "in_list_view": 1, "label": "Company", "options": "Company Profile", "reqd": 1},
+  {"fieldname": "subscription_plan", "fieldtype": "Link", "in_list_view": 1, "label": "Subscription Plan", "options": "Subscription Plan", "reqd": 1},
+  {"fieldname": "column_break_4", "fieldtype": "Column Break"},
+  {"fieldname": "start_date", "fieldtype": "Date", "in_list_view": 1, "label": "Start Date", "reqd": 1},
+  {"fieldname": "end_date", "fieldtype": "Date", "in_list_view": 1, "label": "End Date", "reqd": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Active\nExpired\nCancelled\nPending", "default": "Active"},
+  {"fieldname": "auto_renew", "fieldtype": "Check", "label": "Auto Renew", "default": "1"},
+  {"fieldname": "section_break_7", "fieldtype": "Section Break", "label": "Billing"},
+  {"fieldname": "price", "fieldtype": "Currency", "label": "Price"},
+  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency", "default": "USD"},
+  {"fieldname": "column_break_10", "fieldtype": "Column Break"},
+  {"fieldname": "billing_email", "fieldtype": "Data", "label": "Billing Email"},
+  {"fieldname": "payment_status", "fieldtype": "Select", "label": "Payment Status", "options": "Paid\nPending\nOverdue\nRefunded"},
+  {"fieldname": "section_break_13", "fieldtype": "Section Break", "label": "Payment History"},
+  {"fieldname": "payment_history", "fieldtype": "Table", "label": "Payment History", "options": "Payment Transaction"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Subscription Management",
+ "name": "Employer Subscription",
+ "permissions": [
+  {"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Employer", "read": 1, "write": 1, "create": 1}
+ ]
+}

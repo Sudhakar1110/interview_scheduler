@@ -1,0 +1,42 @@
+[
+ {
+  "doctype": "Role",
+  "name": "HireFlow Admin",
+  "role_name": "HireFlow Admin",
+  "desk_access": 1,
+  "home_page": "/app/hireflow-dashboard",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Role",
+  "name": "Employer",
+  "role_name": "Employer",
+  "desk_access": 1,
+  "home_page": "/app/employer-dashboard",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Role",
+  "name": "Recruiter",
+  "role_name": "Recruiter",
+  "desk_access": 1,
+  "home_page": "/app/recruiter-dashboard",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Role",
+  "name": "Interviewer",
+  "role_name": "Interviewer",
+  "desk_access": 1,
+  "home_page": "/app/interview-feedback",
+  "module": "HireFlow"
+ },
+ {
+  "doctype": "Role",
+  "name": "Candidate",
+  "role_name": "Candidate",
+  "desk_access": 0,
+  "home_page": "/candidate-dashboard",
+  "module": "HireFlow"
+ }
+]

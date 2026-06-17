@@ -1,0 +1,98 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Recruiter Dashboard - HireFlow{% endblock %}
+
+{% block page_content %}
+<div class="dashboard-page recruiter-dashboard">
+    <div class="dashboard-header">
+        <h1>Recruiter Dashboard</h1>
+        <div class="header-actions">
+            <a href="/app/interview-schedule/new" class="btn btn-primary">Schedule Interview</a>
+            <a href="/app/candidate-profile/new" class="btn btn-secondary">Add Candidate</a>
+        </div>
+    </div>
+    
+    <div class="dashboard-stats">
+        <div class="stat-card">
+            <h3>{{ stats.pending_screening }}</h3>
+            <p>Pending Screening</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ stats.interviews_today }}</h3>
+            <p>Interviews Today</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ stats.offers_pending }}</h3>
+            <p>Offers Pending</p>
+        </div>
+        <div class="stat-card">
+            <h3>{{ stats.placements }}</h3>
+            <p>Placements</p>
+        </div>
+    </div>
+    
+    <div class="dashboard-sections">
+        <section class="dashboard-section">
+            <h2>Today's Interviews</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Candidate</th>
+                        <th>Job</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for interview in today_interviews %}
+                    <tr>
+                        <td>{{ interview.interview_time }}</td>
+                        <td>{{ interview.candidate_name }}</td>
+                        <td>{{ interview.job_title }}</td>
+                        <td>{{ interview.interview_type }}</td>
+                        <td><span class="badge badge-{{ interview.status|lower }}">{{ interview.status }}</span></td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5">No interviews scheduled for today</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        
+        <section class="dashboard-section">
+            <h2>Recent Applications for Review</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Candidate</th>
+                        <th>Position</th>
+                        <th>Score</th>
+                        <th>Applied</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for application in pending_applications %}
+                    <tr>
+                        <td>{{ application.candidate_name }}</td>
+                        <td>{{ application.job_title }}</td>
+                        <td>{{ application.score or 'N/A' }}%</td>
+                        <td>{{ application.application_date }}</td>
+                        <td>
+                            <a href="/app/job-application/{{ application.name }}">Review</a>
+                        </td>
+                    </tr>
+                    {% else %}
+                    <tr>
+                        <td colspan="5">No pending applications</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </div>
+</div>
+{% endblock %}

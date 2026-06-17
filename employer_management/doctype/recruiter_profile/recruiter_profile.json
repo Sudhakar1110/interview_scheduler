@@ -1,0 +1,31 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:recruiter_name",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["recruiter_name", "user", "company", "email", "phone", "column_break_5", "designation", "department", "section_break_8", "skills", "column_break_10", "is_active"],
+ "fields": [
+  {"fieldname": "recruiter_name", "fieldtype": "Data", "in_list_view": 1, "label": "Recruiter Name", "reqd": 1},
+  {"fieldname": "user", "fieldtype": "Link", "label": "User", "options": "User"},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company Profile"},
+  {"fieldname": "email", "fieldtype": "Data", "label": "Email"},
+  {"fieldname": "phone", "fieldtype": "Data", "label": "Phone"},
+  {"fieldname": "column_break_5", "fieldtype": "Column Break"},
+  {"fieldname": "designation", "fieldtype": "Data", "label": "Designation"},
+  {"fieldname": "department", "fieldtype": "Data", "label": "Department"},
+  {"fieldname": "section_break_8", "fieldtype": "Section Break", "label": "Additional Info"},
+  {"fieldname": "skills", "fieldtype": "Text", "label": "Skills"},
+  {"fieldname": "column_break_10", "fieldtype": "Column Break"},
+  {"fieldname": "is_active", "fieldtype": "Check", "label": "Is Active", "default": "1"}
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "module": "Employer Management",
+ "name": "Recruiter Profile",
+ "permissions": [
+  {"role": "HireFlow Admin", "read": 1, "write": 1, "create": 1, "delete": 1},
+  {"role": "Employer", "read": 1, "write": 1, "create": 1}
+ ]
+}

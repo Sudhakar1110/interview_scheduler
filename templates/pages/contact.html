@@ -1,0 +1,53 @@
+{% extends "templates/web.html" %}
+
+{% block title %}Contact Us - HireFlow{% endblock %}
+
+{% block page_content %}
+<div class="contact-page">
+    <div class="hero-section">
+        <h1>Contact Us</h1>
+        <p>Get in touch with our team</p>
+    </div>
+    
+    <div class="contact-container">
+        <div class="contact-form-section">
+            <form class="contact-form" action="/api/contact" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+        
+        <div class="contact-info-section">
+            <h3>Contact Information</h3>
+            <div class="info-item">
+                <strong>Email:</strong> info@antigravity.com
+            </div>
+            <div class="info-item">
+                <strong>Website:</strong> www.antigravity.com
+            </div>
+            <div class="info-item">
+                <strong>Location:</strong> Global
+            </div>
+            
+            <h3>Support Hours</h3>
+            <p>Monday - Friday: 9:00 AM - 6:00 PM (UTC)</p>
+            <p>Email support available 24/7 for paid plans</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

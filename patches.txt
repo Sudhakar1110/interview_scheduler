@@ -1,0 +1,4 @@
+hireflow.patches.v1_0.setup_roles
+hireflow.patches.v1_0.create_default_subscription_plans
+hireflow.patches.v1_0.setup_email_templates
+hireflow.patches.v1_0.create_demo_data

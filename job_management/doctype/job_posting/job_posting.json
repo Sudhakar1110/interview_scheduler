@@ -1,0 +1,308 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "job_title",
+  "company",
+  "department",
+  "column_break_5",
+  "job_category",
+  "job_type",
+  "job_location",
+  "section_break_9",
+  "job_description",
+  "responsibilities",
+  "column_break_12",
+  "requirements",
+  "benefits",
+  "section_break_15",
+  "min_experience",
+  "max_experience",
+  "column_break_18",
+  "min_salary",
+  "max_salary",
+  "currency",
+  "section_break_22",
+  "number_of_openings",
+  "application_deadline",
+  "column_break_25",
+  "status",
+  "publish_on_website",
+  "section_break_28",
+  "required_skills",
+  "section_break_30",
+  "recruiter",
+  "created_by",
+  "column_break_33",
+  "modified_by",
+  "posted_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "JOB-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Job Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "job_category",
+   "fieldtype": "Link",
+   "label": "Job Category",
+   "options": "Job Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_type",
+   "fieldtype": "Link",
+   "label": "Job Type",
+   "options": "Job Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "job_location",
+   "fieldtype": "Link",
+   "label": "Job Location",
+   "options": "Job Location"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Job Details"
+  },
+  {
+   "fieldname": "job_description",
+   "fieldtype": "Text Editor",
+   "label": "Job Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "responsibilities",
+   "fieldtype": "Text Editor",
+   "label": "Responsibilities"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "requirements",
+   "fieldtype": "Text Editor",
+   "label": "Requirements"
+  },
+  {
+   "fieldname": "benefits",
+   "fieldtype": "Text Editor",
+   "label": "Benefits"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Experience & Salary"
+  },
+  {
+   "fieldname": "min_experience",
+   "fieldtype": "Float",
+   "label": "Min Experience (Years)"
+  },
+  {
+   "fieldname": "max_experience",
+   "fieldtype": "Float",
+   "label": "Max Experience (Years)"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "min_salary",
+   "fieldtype": "Currency",
+   "label": "Min Salary"
+  },
+  {
+   "fieldname": "max_salary",
+   "fieldtype": "Currency",
+   "label": "Max Salary"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "default": "USD"
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "label": "Additional Information"
+  },
+  {
+   "fieldname": "number_of_openings",
+   "fieldtype": "Int",
+   "label": "Number of Openings",
+   "default": "1"
+  },
+  {
+   "fieldname": "application_deadline",
+   "fieldtype": "Date",
+   "label": "Application Deadline",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nOpen\nClosed\nOn Hold",
+   "default": "Draft",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "publish_on_website",
+   "fieldtype": "Check",
+   "label": "Publish on Website",
+   "default": "1"
+  },
+  {
+   "fieldname": "section_break_28",
+   "fieldtype": "Section Break",
+   "label": "Required Skills"
+  },
+  {
+   "fieldname": "required_skills",
+   "fieldtype": "Table",
+   "label": "Required Skills",
+   "options": "Job Skill"
+  },
+  {
+   "fieldname": "section_break_30",
+   "fieldtype": "Section Break",
+   "label": "Assignment & Tracking"
+  },
+  {
+   "fieldname": "recruiter",
+   "fieldtype": "Link",
+   "label": "Assigned Recruiter",
+   "options": "User"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "modified_by",
+   "fieldtype": "Link",
+   "label": "Modified By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "posted_date",
+   "fieldtype": "Date",
+   "label": "Posted Date",
+   "default": "Today",
+   "read_only": 1
+  }
+ ],
+ "has_web_view": 1,
+ "is_submittable": 0,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Job Management",
+ "name": "Job Posting",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HireFlow Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Employer",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Recruiter",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Candidate",
+   "share": 0,
+   "write": 0
+  }
+ ],
+ "quick_entry": 0,
+ "route": "jobs",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,10 @@
+Job Management
+Employer Management
+Candidate Management
+ATS Management
+Interview Management
+Panel Management
+Offer Management
+Hiring Management
+Subscription Management
+Communication Management

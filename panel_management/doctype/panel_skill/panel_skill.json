@@ -1,0 +1,1 @@
+{"doctype": "DocType", "editable_grid": 1, "engine": "InnoDB", "fields": [{"fieldname": "skill", "fieldtype": "Data", "in_list_view": 1, "label": "Skill", "reqd": 1}, {"fieldname": "proficiency_level", "fieldtype": "Select", "label": "Proficiency", "options": "Beginner\nIntermediate\nAdvanced\nExpert"}], "istable": 1, "module": "Panel Management", "name": "Panel Skill"}

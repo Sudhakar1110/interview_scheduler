@@ -5,13 +5,18 @@
 
 from __future__ import unicode_literals
 import frappe
-from frappe.model.document import Document
 from frappe import _
 from frappe.utils import getdate, today
+from frappe.website.website_generator import WebsiteGenerator
 from hireflow.utils.validators import validate_job_posting
 
 
-class JobPosting(Document):
+class JobPosting(WebsiteGenerator):
+    website = frappe._dict(
+        condition_field="publish_on_website",
+        page_title_field="job_title",
+    )
+
     def validate(self):
         validate_job_posting(self)
         self.set_created_by()

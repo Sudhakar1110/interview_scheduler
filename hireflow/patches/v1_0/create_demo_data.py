@@ -965,9 +965,9 @@ def _create_interview_schedules():
              {"interviewer": "Administrator", "interviewer_name": "James Wilson", "role": "Primary"},
              {"interviewer": "Administrator", "interviewer_name": "Sarah Chen", "role": "Co-Interviewer"},
          ]},
-        # TechCorp - Senior Python Developer - John Doe - Round 2 (Completed)
+        # TechCorp - Senior Python Developer - John Doe - Round 2 (Completed - use today() to pass date validator)
         {"job_posting": _get_job_posting("Senior Python Developer"), "candidate": _get_candidate("john.doe@email.com"), "company": "TechCorp Inc.",
-         "interview_date": add_days(today(), -7), "interview_time": "14:00:00", "duration": "45 mins", "status": "Completed",
+         "interview_date": today(), "interview_time": "14:00:00", "duration": "45 mins", "status": "Completed",
          "interview_type": "Technical", "interview_mode": "Video Call", "meeting_link": "https://meet.google.com/prev-round-xyz",
          "interview_round": 1, "feedback_required": 1,
          "interviewers": [
@@ -983,7 +983,7 @@ def _create_interview_schedules():
          ]},
         # TechCorp - DevOps Engineer - Ryan Martinez - Completed
         {"job_posting": _get_job_posting("DevOps Engineer"), "candidate": _get_candidate("ryan.martinez@email.com"), "company": "TechCorp Inc.",
-         "interview_date": add_days(today(), -2), "interview_time": "11:00:00", "duration": "60 mins", "status": "Completed",
+         "interview_date": today(), "interview_time": "11:00:00", "duration": "60 mins", "status": "Completed",
          "interview_type": "Technical", "interview_mode": "Video Call", "meeting_link": "https://zoom.us/j/987654321",
          "interview_round": 1, "feedback_required": 1,
          "interviewers": [
@@ -992,7 +992,7 @@ def _create_interview_schedules():
          ]},
         # InnovateSoft - Product Manager - Jane Smith (Completed)
         {"job_posting": _get_job_posting("Product Manager"), "candidate": _get_candidate("jane.smith@email.com"), "company": "InnovateSoft Solutions",
-         "interview_date": add_days(today(), -1), "interview_time": "11:00:00", "duration": "60 mins", "status": "Completed",
+         "interview_date": today(), "interview_time": "11:00:00", "duration": "60 mins", "status": "Completed",
          "interview_type": "HR", "interview_mode": "Video Call", "meeting_link": "https://zoom.us/j/123456789",
          "interview_round": 1, "feedback_required": 0,
          "interviewers": [
@@ -1016,7 +1016,7 @@ def _create_interview_schedules():
          ]},
         # TechCorp - HR Operations Specialist - Emma Wilson
         {"job_posting": _get_job_posting("HR Operations Specialist"), "candidate": _get_candidate("emma.wilson@email.com"), "company": "TechCorp Inc.",
-         "interview_date": add_days(today(), -3), "interview_time": "09:30:00", "duration": "45 mins", "status": "Completed",
+         "interview_date": today(), "interview_time": "09:30:00", "duration": "45 mins", "status": "Completed",
          "interview_type": "HR", "interview_mode": "Video Call", "meeting_link": "https://zoom.us/j/hr-round-1",
          "interview_round": 1, "feedback_required": 1,
          "interviewers": [

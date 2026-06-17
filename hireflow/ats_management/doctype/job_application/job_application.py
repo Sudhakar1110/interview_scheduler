@@ -26,7 +26,8 @@ class JobApplication(Document):
         self.send_application_notification()
     
     def on_update(self):
-        if self.status == "Interview" and self.status != self._doc_before_save.status:
+        doc_before_save = self.get_doc_before_save()
+        if self.status == "Interview" and doc_before_save and self.status != doc_before_save.status:
             frappe.publish_realtime("application_status_changed", {
                 "application": self.name,
                 "status": self.status

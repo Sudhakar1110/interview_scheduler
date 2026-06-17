@@ -5,7 +5,7 @@ from frappe import _
 from frappe.utils import getdate, today
 
 
-def validate_interview_schedule(doc):
+def validate_interview_schedule(doc, method=None):
     """Validate interview schedule"""
     # Check if interview date is in future
     if getdate(doc.interview_date) < getdate(today()):

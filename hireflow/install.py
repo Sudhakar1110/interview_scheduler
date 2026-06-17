@@ -574,7 +574,7 @@ def sync_module_workspaces():
         {"type": "quick_list", "data": {"doctype": "Interview Schedule", "label": "Interview Schedules"}},
         {"type": "quick_list", "data": {"doctype": "Offer Letter", "label": "Offer Letters"}},
     ]
-    _make_workspace(title="Hireflow", module="Hireflow", icon="briefcase", indicator_color="green", sequence_id=1,
+    _make_workspace(title="Hireflow", module="HireFlow", icon="briefcase", indicator_color="green", sequence_id=1,
         extra_content_items=hireflow_extra_content,
         shortcuts=[
             {"label": "New Job Posting", "type": "DocType", "link_to": "Job Posting", "onboard": 1},
@@ -618,7 +618,7 @@ def sync_module_workspaces():
             {"type": "Card Break", "label": "Configuration", "icon": "setting"},
             {"type": "Link", "label": "Company Settings", "link_type": "DocType", "link_to": "Company Profile"},
         ])
-    _make_workspace(title="Job Management", module="Job Management", icon="briefcase", indicator_color="blue", sequence_id=2, parent_page="Hireflow",
+    _make_workspace(title="Job Management", module="HireFlow", icon="briefcase", indicator_color="blue", sequence_id=2, parent_page="Hireflow",
         shortcuts=[{"label": "New Job Posting", "type": "DocType", "link_to": "Job Posting", "onboard": 1},
             {"label": "New Category", "type": "DocType", "link_to": "Job Category", "onboard": 0},
             {"label": "New Type", "type": "DocType", "link_to": "Job Type", "onboard": 0},
@@ -632,7 +632,7 @@ def sync_module_workspaces():
             {"type": "Link", "label": "Job Locations", "link_type": "DocType", "link_to": "Job Location"},
             {"type": "Link", "label": "Job Skills", "link_type": "DocType", "link_to": "Job Skill"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="Employer Management", module="Employer Management", icon="building", indicator_color="green", sequence_id=3, parent_page="Hireflow",
+    _make_workspace(title="Employer Management", module="HireFlow", icon="building", indicator_color="green", sequence_id=3, parent_page="Hireflow",
         shortcuts=[{"label": "New Company", "type": "DocType", "link_to": "Company Profile", "onboard": 1},
             {"label": "New Recruiter", "type": "DocType", "link_to": "Recruiter Profile", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Employers", "icon": "building"},
@@ -641,19 +641,19 @@ def sync_module_workspaces():
             {"type": "Card Break", "label": "Subscriptions", "icon": "credit-card"},
             {"type": "Link", "label": "Employer Subscriptions", "link_type": "DocType", "link_to": "Employer Subscription"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="Candidate Management", module="Candidate Management", icon="people", indicator_color="purple", sequence_id=4, parent_page="Hireflow",
+    _make_workspace(title="Candidate Management", module="HireFlow", icon="people", indicator_color="purple", sequence_id=4, parent_page="Hireflow",
         shortcuts=[{"label": "New Candidate", "type": "DocType", "link_to": "Candidate Profile", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Candidates", "icon": "people"},
             {"type": "Link", "label": "Candidate Profiles", "link_type": "DocType", "link_to": "Candidate Profile"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="ATS Management", module="ATS Management", icon="check", indicator_color="orange", sequence_id=5, parent_page="Hireflow",
+    _make_workspace(title="ATS Management", module="HireFlow", icon="check", indicator_color="orange", sequence_id=5, parent_page="Hireflow",
         shortcuts=[{"label": "New Application", "type": "DocType", "link_to": "Job Application", "onboard": 1},
             {"label": "New Feedback", "type": "DocType", "link_to": "Interview Feedback", "onboard": 0}],
         links=[{"type": "Card Break", "label": "Applications", "icon": "file-text"},
             {"type": "Link", "label": "Job Applications", "link_type": "DocType", "link_to": "Job Application"},
             {"type": "Link", "label": "Interview Feedback", "link_type": "DocType", "link_to": "Interview Feedback"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="Interview Management", module="Interview Management", icon="people", indicator_color="cyan", sequence_id=6, parent_page="Hireflow",
+    _make_workspace(title="Interview Management", module="HireFlow", icon="people", indicator_color="cyan", sequence_id=6, parent_page="Hireflow",
         shortcuts=[{"label": "Schedule Interview", "type": "DocType", "link_to": "Interview Schedule", "onboard": 1},
             {"label": "New Feedback", "type": "DocType", "link_to": "Interview Feedback", "onboard": 0}],
         links=[{"type": "Card Break", "label": "Schedules", "icon": "calendar"},
@@ -661,22 +661,22 @@ def sync_module_workspaces():
             {"type": "Card Break", "label": "Feedback", "icon": "comment"},
             {"type": "Link", "label": "Interview Feedback", "link_type": "DocType", "link_to": "Interview Feedback"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="Panel Management", module="Panel Management", icon="group", indicator_color="darkgrey", sequence_id=7, parent_page="Hireflow",
+    _make_workspace(title="Panel Management", module="HireFlow", icon="group", indicator_color="darkgrey", sequence_id=7, parent_page="Hireflow",
         shortcuts=[{"label": "New Panel Member", "type": "DocType", "link_to": "Panel Member", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Panel Members", "icon": "people"},
             {"type": "Link", "label": "All Panel Members", "link_type": "DocType", "link_to": "Panel Member"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="Offer Management", module="Offer Management", icon="mail", indicator_color="pink", sequence_id=8, parent_page="Hireflow",
+    _make_workspace(title="Offer Management", module="HireFlow", icon="mail", indicator_color="pink", sequence_id=8, parent_page="Hireflow",
         shortcuts=[{"label": "New Offer Letter", "type": "DocType", "link_to": "Offer Letter", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Offers", "icon": "mail"},
             {"type": "Link", "label": "Offer Letters", "link_type": "DocType", "link_to": "Offer Letter"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="Hiring Management", module="Hiring Management", icon="user", indicator_color="red", sequence_id=9, parent_page="Hireflow",
+    _make_workspace(title="Hiring Management", module="HireFlow", icon="user", indicator_color="red", sequence_id=9, parent_page="Hireflow",
         shortcuts=[{"label": "New Onboarding", "type": "DocType", "link_to": "Employee Onboarding", "onboard": 1}],
         links=[{"type": "Card Break", "label": "Onboarding", "icon": "user"},
             {"type": "Link", "label": "Employee Onboardings", "link_type": "DocType", "link_to": "Employee Onboarding"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="Subscription Management", module="Subscription Management", icon="credit-card", indicator_color="yellow", sequence_id=10, parent_page="Hireflow",
+    _make_workspace(title="Subscription Management", module="HireFlow", icon="credit-card", indicator_color="yellow", sequence_id=10, parent_page="Hireflow",
         shortcuts=[{"label": "New Plan", "type": "DocType", "link_to": "Subscription Plan", "onboard": 1},
             {"label": "New Subscription", "type": "DocType", "link_to": "Employer Subscription", "onboard": 0}],
         links=[{"type": "Card Break", "label": "Plans", "icon": "tag"},
@@ -686,7 +686,7 @@ def sync_module_workspaces():
             {"type": "Card Break", "label": "Payments", "icon": "dollar"},
             {"type": "Link", "label": "Payment Transactions", "link_type": "DocType", "link_to": "Payment Transaction"},
             {"type": "Card Break", "label": "Reports", "icon": "folder"}])
-    _make_workspace(title="Communication Management", module="Communication Management", icon="message-square", indicator_color="blue", sequence_id=11, parent_page="Hireflow",
+    _make_workspace(title="Communication Management", module="HireFlow", icon="message-square", indicator_color="blue", sequence_id=11, parent_page="Hireflow",
         shortcuts=[{"label": "New Template", "type": "DocType", "link_to": "Email Template", "onboard": 1},
             {"label": "New Message", "type": "DocType", "link_to": "Message Center", "onboard": 0}],
         links=[{"type": "Card Break", "label": "Templates", "icon": "mail"},

@@ -807,6 +807,87 @@ def _create_job_postings():
         },
     ]
 
+    # Define skills for each job posting
+    job_skills_map = {
+        "Senior Python Developer": [
+            {"skill": "Python", "years_experience": 5},
+            {"skill": "Django", "years_experience": 4},
+            {"skill": "PostgreSQL", "years_experience": 4},
+            {"skill": "REST APIs", "years_experience": 5},
+            {"skill": "Docker", "years_experience": 3},
+            {"skill": "AWS", "years_experience": 3},
+        ],
+        "Product Manager": [
+            {"skill": "Product Strategy", "years_experience": 4},
+            {"skill": "Agile", "years_experience": 3},
+            {"skill": "User Research", "years_experience": 3},
+            {"skill": "Data Analysis", "years_experience": 3},
+            {"skill": "SQL", "years_experience": 2},
+        ],
+        "DevOps Engineer": [
+            {"skill": "Docker", "years_experience": 3},
+            {"skill": "Kubernetes", "years_experience": 3},
+            {"skill": "AWS", "years_experience": 3},
+            {"skill": "Terraform", "years_experience": 2},
+            {"skill": "CI/CD", "years_experience": 3},
+            {"skill": "Linux", "years_experience": 4},
+            {"skill": "Python", "years_experience": 2},
+        ],
+        "Data Scientist": [
+            {"skill": "Python", "years_experience": 2},
+            {"skill": "Machine Learning", "years_experience": 2},
+            {"skill": "TensorFlow", "years_experience": 1},
+            {"skill": "SQL", "years_experience": 3},
+            {"skill": "Statistics", "years_experience": 2},
+            {"skill": "Data Visualization", "years_experience": 2},
+        ],
+        "Frontend Developer": [
+            {"skill": "React", "years_experience": 3},
+            {"skill": "TypeScript", "years_experience": 3},
+            {"skill": "JavaScript", "years_experience": 4},
+            {"skill": "CSS", "years_experience": 3},
+            {"skill": "HTML", "years_experience": 4},
+        ],
+        "Senior Backend Engineer": [
+            {"skill": "Java", "years_experience": 5},
+            {"skill": "Spring Boot", "years_experience": 4},
+            {"skill": "Microservices", "years_experience": 4},
+            {"skill": "Kafka", "years_experience": 3},
+            {"skill": "MongoDB", "years_experience": 3},
+            {"skill": "System Design", "years_experience": 4},
+        ],
+        "Solutions Architect": [
+            {"skill": "Cloud Architecture", "years_experience": 8},
+            {"skill": "AWS", "years_experience": 7},
+            {"skill": "GCP", "years_experience": 5},
+            {"skill": "System Design", "years_experience": 8},
+            {"skill": "Networking", "years_experience": 6},
+            {"skill": "Security", "years_experience": 5},
+        ],
+        "Marketing Manager": [
+            {"skill": "Digital Marketing", "years_experience": 4},
+            {"skill": "SEO", "years_experience": 3},
+            {"skill": "Content Marketing", "years_experience": 4},
+            {"skill": "Marketing Automation", "years_experience": 3},
+            {"skill": "Data Analysis", "years_experience": 3},
+        ],
+        "HR Operations Specialist": [
+            {"skill": "HR Operations", "years_experience": 3},
+            {"skill": "HRIS", "years_experience": 2},
+            {"skill": "Employee Relations", "years_experience": 3},
+            {"skill": "Compliance", "years_experience": 2},
+            {"skill": "Recruitment", "years_experience": 3},
+        ],
+        "UX/UI Designer": [
+            {"skill": "Figma", "years_experience": 3},
+            {"skill": "User Research", "years_experience": 3},
+            {"skill": "Prototyping", "years_experience": 3},
+            {"skill": "UI Design", "years_experience": 4},
+            {"skill": "Design Systems", "years_experience": 2},
+            {"skill": "HTML/CSS", "years_experience": 2},
+        ],
+    }
+
     for j in jobs:
         title = j["job_title"]
         if not frappe.db.exists("Job Posting", {"job_title": title}):
@@ -814,10 +895,12 @@ def _create_job_postings():
                 "doctype": "Job Posting",
                 "naming_series": "JOB-.YYYY.-.#####",
                 **j,
-                "required_skills": [],
             })
+            # Add required skills for this job
+            for skill_data in job_skills_map.get(title, []):
+                doc.append("required_skills", skill_data)
             doc.insert(ignore_permissions=True)
-    print("  Created 10 job postings")
+    print("  Created 10 job postings with skills")
 
 
 def _create_job_applications():

@@ -2,5 +2,6 @@
 import frappe
 
 
-class JobSkill(frappe.Document):
+from frappe.model.document import Document
+class JobSkill(Document):
     pass

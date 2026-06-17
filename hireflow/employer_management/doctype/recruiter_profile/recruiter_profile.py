@@ -2,5 +2,6 @@
 import frappe
 
 
-class RecruiterProfile(frappe.Document):
+from frappe.model.document import Document
+class RecruiterProfile(Document):
     pass

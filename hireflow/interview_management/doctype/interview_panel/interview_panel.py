@@ -2,5 +2,6 @@
 import frappe
 
 
-class InterviewPanel(frappe.Document):
+from frappe.model.document import Document
+class InterviewPanel(Document):
     pass

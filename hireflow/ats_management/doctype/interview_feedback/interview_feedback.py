@@ -2,5 +2,6 @@
 import frappe
 
 
-class InterviewFeedback(frappe.Document):
+from frappe.model.document import Document
+class InterviewFeedback(Document):
     pass

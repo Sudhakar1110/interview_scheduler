@@ -2,5 +2,6 @@
 import frappe
 
 
-class JobLocation(frappe.Document):
+from frappe.model.document import Document
+class JobLocation(Document):
     pass

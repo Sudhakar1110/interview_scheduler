@@ -2,7 +2,8 @@
 import frappe
 
 
-class CompanyProfile(frappe.Document):
+from frappe.model.document import Document
+class CompanyProfile(Document):
     def validate(self):
         if self.is_new() and self.user:
             self.assign_employer_role()

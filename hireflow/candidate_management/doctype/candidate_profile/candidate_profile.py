@@ -2,7 +2,8 @@
 import frappe
 
 
-class CandidateProfile(frappe.Document):
+from frappe.model.document import Document
+class CandidateProfile(Document):
     def validate(self):
         self.validate_email()
         self.calculate_total_experience()

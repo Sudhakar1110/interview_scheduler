@@ -2,5 +2,6 @@
 import frappe
 
 
-class JobCategory(frappe.Document):
+from frappe.model.document import Document
+class JobCategory(Document):
     pass

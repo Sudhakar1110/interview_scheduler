@@ -313,9 +313,9 @@ def _make_workspace(title, module, icon, indicator_color, sequence_id,
             if lnk["type"] == "Card Break":
                 if current_card_links:
                     content_items.append({
+                        "id": frappe.generate_hash(length=10),
                         "type": "card",
-                        "label": current_card_label,
-                        "links": current_card_links
+                        "data": {"card_name": current_card_label, "col": 4}
                     })
                 current_card_label = lnk["label"]
                 current_card_links = []
@@ -329,9 +329,9 @@ def _make_workspace(title, module, icon, indicator_color, sequence_id,
                     })
         if current_card_links:
             content_items.append({
+                "id": frappe.generate_hash(length=10),
                 "type": "card",
-                "label": current_card_label,
-                "links": current_card_links
+                "data": {"card_name": current_card_label, "col": 4}
             })
 
     content_json = json.dumps(content_items)

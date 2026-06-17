@@ -336,6 +336,38 @@ def _make_workspace(title, module, icon, indicator_color, sequence_id,
 
     content_json = json.dumps(content_items)
 
+    # Extract number card, chart, and quick list data from extra_content_items
+    # for populating child tables. Frappe v15 reads workspace content from child
+    # tables (WorkspaceNumberCard, WorkspaceChart, WorkspaceQuickList), not from
+    # the content JSON field.
+    number_card_entries = []
+    chart_entries = []
+    quick_list_entries = []
+    if extra_content_items:
+        for item in extra_content_items:
+            if item["type"] == "number_card":
+                name = item["data"].get("card_name") or item["data"].get("number_card_name", "")
+                if name:
+                    number_card_entries.append({
+                        "number_card_name": name,
+                        "label": name
+                    })
+            elif item["type"] == "chart":
+                name = item["data"].get("chart_name", "")
+                if name:
+                    chart_entries.append({
+                        "chart_name": name,
+                        "label": name
+                    })
+            elif item["type"] == "quick_list":
+                doctype = item["data"].get("doctype", "")
+                label = item["data"].get("label", doctype)
+                if doctype:
+                    quick_list_entries.append({
+                        "document_type": doctype,
+                        "label": label
+                    })
+
     if frappe.db.exists("Workspace", title):
         doc = frappe.get_doc("Workspace", title)
         doc.module = module
@@ -358,6 +390,13 @@ def _make_workspace(title, module, icon, indicator_color, sequence_id,
         if links:
             for lnk in links:
                 doc.append("links", lnk)
+        # Populate child tables required for Frappe v15 workspace rendering
+        for entry in number_card_entries:
+            doc.append("number_cards", entry)
+        for entry in chart_entries:
+            doc.append("charts", entry)
+        for entry in quick_list_entries:
+            doc.append("quick_lists", entry)
         doc.flags.ignore_permissions = True
         doc.flags.ignore_validate = True
         doc.save(ignore_permissions=True)
@@ -379,6 +418,13 @@ def _make_workspace(title, module, icon, indicator_color, sequence_id,
         if links:
             for lnk in links:
                 doc.append("links", lnk)
+        # Populate child tables required for Frappe v15 workspace rendering
+        for entry in number_card_entries:
+            doc.append("number_cards", entry)
+        for entry in chart_entries:
+            doc.append("charts", entry)
+        for entry in quick_list_entries:
+            doc.append("quick_lists", entry)
         doc.insert(ignore_permissions=True, ignore_mandatory=True)
         print("  Created workspace: {0}".format(title))
     return doc

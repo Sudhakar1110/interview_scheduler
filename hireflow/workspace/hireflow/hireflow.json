@@ -1,8 +1,73 @@
 {
  "app": "hireflow",
  "category": "Modules",
- "charts": [],
- "content": "[{\"type\": \"number_card\", \"data\": {\"card_name\": \"Open Jobs\"}}, {\"type\": \"number_card\", \"data\": {\"card_name\": \"Active Candidates\"}}, {\"type\": \"number_card\", \"data\": {\"card_name\": \"Scheduled Interviews\"}}, {\"type\": \"number_card\", \"data\": {\"card_name\": \"Offers Released\"}}, {\"type\": \"number_card\", \"data\": {\"card_name\": \"Hires Completed\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Applications by Status\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Interviews by Month\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Hiring Funnel\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Open Jobs by Department\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Candidate Pipeline\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Job Posting\", \"label\": \"Job Openings\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Job Application\", \"label\": \"Job Applications\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Candidate Profile\", \"label\": \"Candidates\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Interview Schedule\", \"label\": \"Interview Schedules\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Offer Letter\", \"label\": \"Offer Letters\"}}, {\"type\": \"card\", \"label\": \"Job Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Job Posting\", \"label\": \"Job Postings\"}, {\"type\": \"doctype\", \"name\": \"Job Category\", \"label\": \"Job Categories\"}, {\"type\": \"doctype\", \"name\": \"Job Type\", \"label\": \"Job Types\"}, {\"type\": \"doctype\", \"name\": \"Job Location\", \"label\": \"Job Locations\"}, {\"type\": \"doctype\", \"name\": \"Job Skill\", \"label\": \"Job Skills\"}]}, {\"type\": \"card\", \"label\": \"Employer Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Company Profile\", \"label\": \"Company Profiles\"}, {\"type\": \"doctype\", \"name\": \"Recruiter Profile\", \"label\": \"Recruiter Profiles\"}]}, {\"type\": \"card\", \"label\": \"Candidate Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Candidate Profile\", \"label\": \"Candidate Profiles\"}, {\"type\": \"doctype\", \"name\": \"Candidate Education\", \"label\": \"Candidate Education\"}, {\"type\": \"doctype\", \"name\": \"Candidate Experience\", \"label\": \"Candidate Experience\"}, {\"type\": \"doctype\", \"name\": \"Candidate Skill\", \"label\": \"Candidate Skills\"}, {\"type\": \"doctype\", \"name\": \"Candidate Certification\", \"label\": \"Candidate Certifications\"}]}, {\"type\": \"card\", \"label\": \"ATS Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Job Application\", \"label\": \"Job Applications\"}, {\"type\": \"doctype\", \"name\": \"Interview Feedback\", \"label\": \"Interview Feedback\"}]}, {\"type\": \"card\", \"label\": \"Interview Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Interview Schedule\", \"label\": \"Interview Schedules\"}, {\"type\": \"doctype\", \"name\": \"Interview Panel\", \"label\": \"Interview Panels\"}]}, {\"type\": \"card\", \"label\": \"Panel Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Panel Member\", \"label\": \"Panel Members\"}, {\"type\": \"doctype\", \"name\": \"Panel Availability\", \"label\": \"Panel Availability\"}, {\"type\": \"doctype\", \"name\": \"Panel Skill\", \"label\": \"Panel Skills\"}]}, {\"type\": \"card\", \"label\": \"Offer Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Offer Letter\", \"label\": \"Offer Letters\"}]}, {\"type\": \"card\", \"label\": \"Hiring Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Employee Onboarding\", \"label\": \"Employee Onboarding\"}, {\"type\": \"doctype\", \"name\": \"Document Verification\", \"label\": \"Document Verification\"}, {\"type\": \"doctype\", \"name\": \"Joining Checklist\", \"label\": \"Joining Checklist\"}]}, {\"type\": \"card\", \"label\": \"Communication Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Message Center\", \"label\": \"Message Center\"}, {\"type\": \"doctype\", \"name\": \"Email Template\", \"label\": \"Email Templates\"}, {\"type\": \"doctype\", \"name\": \"Notification Log\", \"label\": \"Notification Log\"}]}, {\"type\": \"card\", \"label\": \"Subscription Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Subscription Plan\", \"label\": \"Subscription Plans\"}, {\"type\": \"doctype\", \"name\": \"Employer Subscription\", \"label\": \"Employer Subscriptions\"}, {\"type\": \"doctype\", \"name\": \"Payment Transaction\", \"label\": \"Payment Transactions\"}]}]",
+ "number_cards": [
+  {
+   "number_card_name": "Open Jobs",
+   "label": "Open Jobs"
+  },
+  {
+   "number_card_name": "Active Candidates",
+   "label": "Active Candidates"
+  },
+  {
+   "number_card_name": "Scheduled Interviews",
+   "label": "Scheduled Interviews"
+  },
+  {
+   "number_card_name": "Offers Released",
+   "label": "Offers Released"
+  },
+  {
+   "number_card_name": "Hires Completed",
+   "label": "Hires Completed"
+  }
+ ],
+ "quick_lists": [
+  {
+   "document_type": "Job Posting",
+   "label": "Job Openings"
+  },
+  {
+   "document_type": "Job Application",
+   "label": "Job Applications"
+  },
+  {
+   "document_type": "Candidate Profile",
+   "label": "Candidates"
+  },
+  {
+   "document_type": "Interview Schedule",
+   "label": "Interview Schedules"
+  },
+  {
+   "document_type": "Offer Letter",
+   "label": "Offer Letters"
+  }
+ ],
+ "charts": [
+  {
+   "chart_name": "Applications by Status",
+   "label": "Applications by Status"
+  },
+  {
+   "chart_name": "Interviews by Month",
+   "label": "Interviews by Month"
+  },
+  {
+   "chart_name": "Hiring Funnel",
+   "label": "Hiring Funnel"
+  },
+  {
+   "chart_name": "Open Jobs by Department",
+   "label": "Open Jobs by Department"
+  },
+  {
+   "chart_name": "Candidate Pipeline",
+   "label": "Candidate Pipeline"
+  }
+ ],
+ "content": "[{\"type\": \"number_card\", \"data\": {\"card_name\": \"Open Jobs\"}}, {\"type\": \"number_card\", \"data\": {\"card_name\": \"Active Candidates\"}}, {\"type\": \"number_card\", \"data\": {\"card_name\": \"Scheduled Interviews\"}}, {\"type\": \"number_card\", \"data\": {\"card_name\": \"Offers Released\"}}, {\"type\": \"number_card\", \"data\": {\"card_name\": \"Hires Completed\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Applications by Status\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Interviews by Month\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Hiring Funnel\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Open Jobs by Department\"}}, {\"type\": \"chart\", \"data\": {\"chart_name\": \"Candidate Pipeline\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Job Posting\", \"label\": \"Job Openings\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Job Application\", \"label\": \"Job Applications\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Candidate Profile\", \"label\": \"Candidates\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Interview Schedule\", \"label\": \"Interview Schedules\"}}, {\"type\": \"quick_list\", \"data\": {\"doctype\": \"Offer Letter\", \"label\": \"Offer Letters\"}}, {\"type\": \"card\", \"label\": \"Job Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Job Posting\", \"label\": \"Job Postings\"}, {\"type\": \"doctype\", \"name\": \"Job Category\", \"label\": \"Job Categories\"}, {\"type\": \"doctype\", \"name\": \"Job Type\", \"label\": \"Job Types\"}, {\"type\": \"doctype\", \"name\": \"Job Location\", \"label\": \"Job Locations\"}, {\"type\": \"doctype\", \"name\": \"Job Skill\", \"label\": \"Job Skills\"}]}, {\"type\": \"card\", \"label\": \"Employer Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Company Profile\", \"label\": \"Company Profiles\"}, {\"type\": \"doctype\", \"name\": \"Recruiter Profile\", \"label\": \"Recruiter Profiles\"}]}, {\"type\": \"card\", \"label\": \"Candidate Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Candidate Profile\", \"label\": \"Candidate Profiles\"}]}, {\"type\": \"card\", \"label\": \"ATS Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Job Application\", \"label\": \"Job Applications\"}, {\"type\": \"doctype\", \"name\": \"Interview Feedback\", \"label\": \"Interview Feedback\"}]}, {\"type\": \"card\", \"label\": \"Interview Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Interview Schedule\", \"label\": \"Interview Schedules\"}]}, {\"type\": \"card\", \"label\": \"Panel Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Panel Member\", \"label\": \"Panel Members\"}]}, {\"type\": \"card\", \"label\": \"Offer Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Offer Letter\", \"label\": \"Offer Letters\"}]}, {\"type\": \"card\", \"label\": \"Hiring Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Employee Onboarding\", \"label\": \"Employee Onboardings\"}]}, {\"type\": \"card\", \"label\": \"Subscription Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Subscription Plan\", \"label\": \"Subscription Plans\"}, {\"type\": \"doctype\", \"name\": \"Employer Subscription\", \"label\": \"Employer Subscriptions\"}, {\"type\": \"doctype\", \"name\": \"Payment Transaction\", \"label\": \"Payment Transactions\"}]}, {\"type\": \"card\", \"label\": \"Communication Management\", \"links\": [{\"type\": \"doctype\", \"name\": \"Email Template\", \"label\": \"Email Templates\"}, {\"type\": \"doctype\", \"name\": \"Message Center\", \"label\": \"Message Center\"}, {\"type\": \"doctype\", \"name\": \"Notification Log\", \"label\": \"Notification Log\"}]}]",
  "creation": "2024-01-01 00:00:00.000000",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
